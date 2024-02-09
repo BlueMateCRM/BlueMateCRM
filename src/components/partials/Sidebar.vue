@@ -8,56 +8,56 @@
       <i class="bx bxl-stripe text-xl text-white"></i>
     </span>
     <router-link
-      to="/"
+      to="/user/leads"
       title="leads"
       class="flex w-12 h-12 items-center justify-center rounded-md mb-1"
     >
       <i class="bx bx-filter-alt text-xl text-white"></i>
     </router-link>
     <router-link
-      to="/quotes"
+      to="/user/quotes"
       title="quotes"
       class="flex w-12 h-12 items-center justify-center rounded-md mb-1"
     >
       <i class="bx bx-dollar-circle text-xl text-white"></i>
     </router-link>
     <router-link
-      to="/orders"
+      to="/user/orders"
       title="orders"
       class="flex w-12 h-12 items-center justify-center rounded-md mb-1"
     >
       <i class="bx bx-task text-xl text-white"></i>
     </router-link>
     <router-link
-      to="/messages"
+      to="/user/messages"
       title="messages"
       class="flex w-12 h-12 items-center justify-center rounded-md mb-1"
     >
       <i class="bx bx-envelope text-xl text-white"></i>
     </router-link>
     <router-link
-      to="/tasks"
+      to="/user/tasks"
       title="tasks"
       class="flex w-12 h-12 items-center justify-center rounded-md mb-1"
     >
       <i class="bx bx-calendar text-xl text-white"></i>
     </router-link>
     <router-link
-      to="/profile"
+      to="/user/profile"
       title="profile"
       class="flex w-12 h-12 items-center justify-center rounded-md mb-1"
     >
       <i class="bx bx-id-card text-xl text-white"></i>
     </router-link>
     <router-link
-      to="/statistic"
+      to="/user/statistics"
       title="statistics"
       class="flex w-12 h-12 items-center justify-center rounded-md mb-1"
     >
       <i class="bx bx-line-chart text-xl text-white"></i>
     </router-link>
     <router-link
-      to="/setting"
+      to="/user/settings"
       title="settings"
       class="flex w-12 h-12 items-center justify-center rounded-md mb-1"
     >
