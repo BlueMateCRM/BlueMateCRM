@@ -4,7 +4,6 @@ import ExampleTable from "../../components/tables/ExapleTable.vue";
 
 <template>
   <main>
-    Home Page
     <ExampleTable />
   </main>
 </template>

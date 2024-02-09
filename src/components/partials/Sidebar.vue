@@ -1,40 +1,73 @@
-<script setup lang="ts">
-
-</script>
+<script setup lang="ts"></script>
 
 <template>
-  <div class="bg-darkBlue h-screen">
-    <router-link to="/" class="menu flex items-center py-4 px-[30px]">
-      <i class='bx bxl-stripe bx-sm' style="color:#ffff"></i>
+  <aside
+    class="sidebar bg-darkBlue w-full min-h-full flex flex-col items-center"
+  >
+    <span class="flex w-12 h-12 items-center justify-center rounded-md mb-1">
+      <i class="bx bxl-stripe text-xl text-white"></i>
+    </span>
+    <router-link
+      to="/"
+      title="leads"
+      class="flex w-12 h-12 items-center justify-center rounded-md mb-1"
+    >
+      <i class="bx bx-filter-alt text-xl text-white"></i>
     </router-link>
-    <router-link to="/login" class="menu flex items-center px-[30px] p-4 rounded-md bg-slate-500">
-      <i class='bx bx-filter-alt bx-sm' style="color:#ffff"></i>
+    <router-link
+      to="/quotes"
+      title="quotes"
+      class="flex w-12 h-12 items-center justify-center rounded-md mb-1"
+    >
+      <i class="bx bx-dollar-circle text-xl text-white"></i>
     </router-link>
-    <router-link to="/" class="flex items-center py-4 px-[30px]">
-      <i class='bx bx-dollar-circle bx-sm' style="color:#ffff" ></i>
+    <router-link
+      to="/orders"
+      title="orders"
+      class="flex w-12 h-12 items-center justify-center rounded-md mb-1"
+    >
+      <i class="bx bx-task text-xl text-white"></i>
     </router-link>
-    <router-link to="/" class="flex items-center py-4 px-[30px]">
-      <i class='bx bx-task bx-sm' style="color:#ffff"></i>
+    <router-link
+      to="/messages"
+      title="messages"
+      class="flex w-12 h-12 items-center justify-center rounded-md mb-1"
+    >
+      <i class="bx bx-envelope text-xl text-white"></i>
     </router-link>
-    <router-link to="/" class="flex items-center py-4 px-[30px]">
-      <i class='bx bx-envelope bx-sm' style="color:#ffff"></i>
+    <router-link
+      to="/tasks"
+      title="tasks"
+      class="flex w-12 h-12 items-center justify-center rounded-md mb-1"
+    >
+      <i class="bx bx-calendar text-xl text-white"></i>
     </router-link>
-    <router-link to="/" class="flex items-center py-4 px-[30px]">
-      <i class='bx bx-calendar bx-sm' style="color:#ffff"></i>
+    <router-link
+      to="/profile"
+      title="profile"
+      class="flex w-12 h-12 items-center justify-center rounded-md mb-1"
+    >
+      <i class="bx bx-id-card text-xl text-white"></i>
     </router-link>
-    <router-link to="/" class="flex items-center py-4 px-[30px]">
-      <i class='bx bx-id-card bx-sm' style="color:#ffff"></i>
+    <router-link
+      to="/statistic"
+      title="statistics"
+      class="flex w-12 h-12 items-center justify-center rounded-md mb-1"
+    >
+      <i class="bx bx-line-chart text-xl text-white"></i>
     </router-link>
-    <router-link to="/" class="flex items-center py-4 px-[30px]">
-      <i class='bx bx-dots-horizontal-rounded bx-sm' style="color:#ffff"></i>
+    <router-link
+      to="/setting"
+      title="settings"
+      class="flex w-12 h-12 items-center justify-center rounded-md mb-1"
+    >
+      <i class="bx bx-dots-horizontal-rounded text-xl text-white"></i>
     </router-link>
-  </div>
+  </aside>
 </template>
 
-<style scoped>
-.router-link-exact-active .menu {
-  background: rgb(15, 118, 110);
-  background: linear-gradient(90deg, rgba(15, 118, 110, 0.2) 0%, rgba(255, 255, 255, 0.4) 100%);
-  color: #0f766e;
+<style>
+.sidebar .router-link-active {
+  background: #427d9d;
 }
 </style>

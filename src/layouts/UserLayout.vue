@@ -5,12 +5,33 @@ import Header from "../components/partials/Header.vue";
 
 <template>
   <main class="flex">
-    <SidebarVue />
-    <div>
+    <!-- sidebar -->
+    <div class="aside w-14 h-screen overflow-y-auto shadow-2xl">
+      <SidebarVue />
+    </div>
+
+    <!-- main content -->
+    <div class="content overflow-y-auto overflow-x-hidden h-screen">
       <Header />
-      <RouterView />
+      <div class="p-4">
+        <RouterView />
+      </div>
     </div>
   </main>
 </template>
 
-<style scoped></style>
+<style scoped>
+.aside::-webkit-scrollbar {
+  width: 5px;
+}
+.aside::-webkit-scrollbar-track {
+  background-color: #4b5677;
+}
+.aside::-webkit-scrollbar-thumb {
+  background: #427d9d;
+  border-radius: 15px;
+}
+.content {
+  width: calc(100% - 56px);
+}
+</style>
