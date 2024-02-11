@@ -35,7 +35,7 @@ const props = defineProps({
       <!-- body -->
       <tbody>
         <tr
-          v-for="item in props.data"
+          v-for="(item, dataIndex) in props.data"
           class="bg-white border-b dark:bg-gray-800 dark:border-gray-700 hover:bg-gray-100 dark:hover:bg-gray-100"
           :key="item.id + 'JJDF'"
         >
@@ -44,7 +44,7 @@ const props = defineProps({
             class="px-3 py-[9.5px] text-[15px]"
             :key="tdIndex + 'TDIndex'"
           >
-            <slot :name="`td_${td.value}`" :item="item">{{
+            <slot :name="`td_${td.value}`" :item="{ ...item, i: dataIndex }">{{
               item[td.value]
             }}</slot>
           </td>

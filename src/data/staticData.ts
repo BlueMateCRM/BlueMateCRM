@@ -14,7 +14,7 @@ export const orders = [
   {
     id: 600002,
     quoted: "01/21/2024 09:01 AM",
-    customer: "John Smith",
+    customer: "Adam Sherlock",
     phone: "(999) 999-9999",
     vehicle: "2022 Toyota Sienna",
     origin: "New York, NY 11101",
@@ -26,7 +26,7 @@ export const orders = [
   {
     id: 600003,
     quoted: "01/21/2024 09:01 AM",
-    customer: "John Smith",
+    customer: "Vitale Carleone",
     phone: "(999) 999-9999",
     vehicle: "2022 Toyota Sienna",
     origin: "New York, NY 11101",
@@ -38,7 +38,7 @@ export const orders = [
   {
     id: 600004,
     quoted: "01/21/2024 09:01 AM",
-    customer: "John Smith",
+    customer: "Karl Clopp",
     phone: "(999) 999-9999",
     vehicle: "2022 Toyota Sienna",
     origin: "New York, NY 11101",
@@ -50,7 +50,7 @@ export const orders = [
   {
     id: 600005,
     quoted: "01/21/2024 09:01 AM",
-    customer: "John Smith",
+    customer: "Micheal Jonson",
     phone: "(999) 999-9999",
     vehicle: "2022 Toyota Sienna",
     origin: "New York, NY 11101",
