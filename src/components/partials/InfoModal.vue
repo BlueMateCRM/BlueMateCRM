@@ -1,4 +1,8 @@
 <script setup lang="ts">
+import Accordion from './Accordion.vue';
+import Frame from './Frame.vue';
+
+
 const props = defineProps({
   close: {
     type: Function,
@@ -46,8 +50,10 @@ const props = defineProps({
         <i class="bx bx-chevron-down text-gray-600 text-[36px]"></i>
       </div>
     </div>
-    <div class="w-full h-full overflow-y-auto p-4">
+    <div class="w-full flex h-full overflow-y-auto p-4">
       <pre>{{ props.data }}</pre>
+      <Accordion title="Details" data="props.data"/>
+      <Frame/>
     </div>
   </div>
 </template>
