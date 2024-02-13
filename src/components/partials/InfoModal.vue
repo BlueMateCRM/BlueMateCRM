@@ -1,6 +1,6 @@
 <script setup lang="ts">
-import Accordion from './Accordion.vue';
-import Frame from './Frame.vue';
+import Accordion from "./Accordion.vue";
+import Frame from "./Frame.vue";
 
 import { ref } from "vue";
 import ModalHeader from "../ui/ModalHeader.vue";
@@ -93,6 +93,7 @@ function changeWidth() {
       <pre>{{ props.data }}</pre>
       <Accordion title="Details" data="props.data"/>
       <Frame/>
+    </div>
     <div class="w-full h-full overflow-y-auto">
       <ModalHeader
         :show="isFull"

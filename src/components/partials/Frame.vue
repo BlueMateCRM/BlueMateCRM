@@ -1,12 +1,14 @@
 <script setup>
-import { ref, onMounted } from "vue";
-const content = ref(null);
-onMounted(() => {
-  content.value = 1;
-});
+import { ref, defineComponent } from "vue";
+import { QuillEditor } from '@vueup/vue-quill';
+import BlotFormatter from "quill-blot-formatter";
+import '@vueup/vue-quill/dist/vue-quill.snow.css'
+let content = ref(1);
+var toolbarOptions = ['bold', 'italic', 'underline','link','list', 'clean'];
 </script>
 <template>
   <div class="w-full">
+    <!-- Framening Header qismi -->
     <nav
       class="flex items-center h-[5vh] w-full gap-4 border-x border-t rounded-t-md border-gray-400 cursor-pointer"
     >
@@ -51,10 +53,25 @@ onMounted(() => {
         <p class="text-lg">Files</p>
       </div>
     </nav>
-    <div class="h-[7vh] w-full border rounded-b-md border-gray-400"></div>
+    <div class="w-full border rounded-b-md border-gray-400">
+      <div v-show="content == 1" class="bg-[#FFF4CC]">
+        <QuillEditor :modules="modules" :toolbar="toolbarOptions" />
+      </div>
+      <div v-show="content == 2">
+        <p>tasks</p>
+      </div>
+      <div v-show="content == 3">
+        <p>phone</p>
+      </div>
+      <div v-show="content == 4">
+        <p>email</p>
+      </div>
+      <div v-show="content == 5">
+        <p>Files</p>
+      </div>
+    </div>
   </div>
 </template>
-
 
 <style scoped>
 .price {
