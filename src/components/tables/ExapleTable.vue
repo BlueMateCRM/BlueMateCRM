@@ -14,11 +14,23 @@ function openModal(data: any) {
   singleData.value = data;
   showModal.value = true;
 }
+
+function getDataByNum(index: number | object) {
+  if (typeof index === "number") {
+    singleData.value = { ...orders[index], i: index };
+  }
+}
 </script>
 
 <template>
   <section>
-    <InfoModal :close="hideModal" :show="showModal" :data="singleData" />
+    <InfoModal
+      :close="hideModal"
+      :show="showModal"
+      :data="singleData"
+      :next="getDataByNum"
+      :length="orders.length"
+    />
     <AppTable :data="orders" :headers="orderHeaders">
       <template #td_id="{ item }">
         <span class="text-mainBlue cursor-pointer" @click="openModal(item)">

@@ -1,7 +1,7 @@
 <script setup lang="ts"></script>
 
 <template>
-  <button class="py-[3px] px-[10px] rounded-main">
+  <button class="h-8 rounded-main">
     <slot />
   </button>
 </template>

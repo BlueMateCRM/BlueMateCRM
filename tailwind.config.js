@@ -13,6 +13,7 @@ export default {
         hoverGray: "#EAEAEA",
         textGray: "#666666",
         textBlack: "#21232C",
+        bglightGray: "#FAFAFA",
       },
       borderRadius: {
         main: "5px",
