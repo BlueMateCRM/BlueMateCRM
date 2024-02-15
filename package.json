@@ -9,10 +9,12 @@
     "preview": "vite preview"
   },
   "dependencies": {
+    "@vueup/vue-quill": "^1.2.0",
     "axios": "^1.6.7",
     "boxicons": "^2.1.4",
     "element-plus": "^2.5.5",
     "pinia": "^2.1.7",
+    "quill-blot-formatter": "^1.0.5",
     "vue": "^3.4.18",
     "vue-router": "^4.2.5"
   },
