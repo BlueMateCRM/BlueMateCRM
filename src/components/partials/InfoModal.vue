@@ -89,11 +89,7 @@ function changeWidth() {
         <i class="bx bx-chevron-down text-gray-600 text-[36px]"></i>
       </div>
     </div>
-    <div class="w-full flex h-full overflow-y-auto p-4">
-      <pre>{{ props.data }}</pre>
-      <Accordion title="Details" data="props.data"/>
-      <Frame/>
-    </div>
+
     <div class="w-full h-full overflow-y-auto">
       <ModalHeader
         :show="isFull"
@@ -106,9 +102,11 @@ function changeWidth() {
       <div class="modal-body flex w-full">
         <aside
           class="modal-aside w-[420px] h-full overflow-y-auto border-r border-gray-300"
-        ></aside>
+        >
+          <Accordion title="Details" data="props.data" />
+        </aside>
         <section class="modal-content h-auto overflow-auto bg-bglightGray p-4">
-          <pre>{{ props.data }}</pre>
+          <Frame />
         </section>
       </div>
     </div>
