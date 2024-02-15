@@ -26,10 +26,6 @@ const props = defineProps({
     type: Object,
     required: true,
   },
-  data: {
-    type: Object,
-    required: true,
-  },
 });
 </script>
 

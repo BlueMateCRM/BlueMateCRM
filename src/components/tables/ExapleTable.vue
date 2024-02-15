@@ -1,6 +1,6 @@
 <script setup lang="ts">
-import { orderHeaders } from "../../data/tableData";
-import { orders } from "../../data/staticData";
+import { orderHeaders } from "../../data/tableData.ts";
+import { orders } from "../../data/staticData.ts";
 import AppTable from "./AppTable.vue";
 import { ref } from "vue";
 import InfoModal from "../partials/InfoModal.vue";
