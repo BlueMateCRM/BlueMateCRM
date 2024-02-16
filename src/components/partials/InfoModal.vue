@@ -1,9 +1,8 @@
 <script setup lang="ts">
-import Accordion from "./Accordion.vue";
 import Frame from "./Frame.vue";
-
 import { ref } from "vue";
 import ModalHeader from "../ui/ModalHeader.vue";
+import AppAccordion from "../ui/AppAccordion.vue";
 
 const props = defineProps({
   close: {
@@ -53,7 +52,7 @@ function changeWidth() {
     id="info-modal"
     class="fixed top-[58.2px] bg-white shadow-xl z-50 border duration-200"
     :class="props.show ? 'right-0' : '-right-full'"
-    :style="isFull ? 'width: 100%;' : 'width: 80%;'"
+    :style="isFull ? 'width: calc(100% - 56px);' : 'width: 80%;'"
   >
     <!-- action tab -->
     <div
@@ -100,10 +99,45 @@ function changeWidth() {
         :data="{ id: props.data?.id, user: props.data?.customer }"
       />
       <div class="modal-body flex w-full">
+        <!-- <pre>{{ props.data }}</pre> -->
         <aside
-          class="modal-aside w-[420px] h-full overflow-y-auto border-r border-gray-300"
+          class="modal-aside pb-4 w-[420px] h-full overflow-y-auto border-r border-gray-300"
         >
-          <Accordion title="Details" data="props.data" />
+          <AppAccordion title="Details" :data="props.data" :isOpen="true">
+            <template #operation>
+              <button class="w-6 h-5 rounded border border-gray-200 bg-white">
+                <i
+                  class="bx bx-dots-horizontal-rounded text-sm text-textBlack"
+                ></i>
+              </button>
+            </template>
+          </AppAccordion>
+          <AppAccordion title="Person" :data="props.data" :isOpen="false">
+            <template #operation>
+              <button class="w-6 h-5 rounded border border-gray-200 bg-white">
+                <i
+                  class="bx bx-dots-horizontal-rounded text-sm text-textBlack"
+                ></i>
+              </button>
+            </template>
+          </AppAccordion>
+          <AppAccordion title="Payment" :data="props.data" :isOpen="false">
+            <template #payment>
+              <button
+                class="px-2 h-5 text-xs rounded border border-mainRed bg-mainRed text-white font-medium"
+              >
+                CD Price
+              </button>
+            </template>
+            <template #operation>
+              <button class="w-6 h-5 rounded border border-gray-300 bg-white">
+                <i
+                  class="bx bx-dots-horizontal-rounded text-sm text-textBlack"
+                ></i>
+              </button>
+            </template>
+          </AppAccordion>
+          <AppAccordion title="Date" :data="props.data" :isOpen="false" />
         </aside>
         <section class="modal-content h-auto overflow-auto bg-bglightGray p-4">
           <Frame />
@@ -122,5 +156,19 @@ function changeWidth() {
 }
 .modal-content {
   width: calc(100% - 420px);
+}
+
+.modal-aside::-webkit-scrollbar {
+  width: 4px;
+}
+.modal-aside::-webkit-scrollbar-track {
+  background-color: #e8e7e7;
+}
+.modal-aside::-webkit-scrollbar-thumb {
+  background: #38667f53;
+  border-radius: 15px;
+}
+.content {
+  width: calc(100% - 56px);
 }
 </style>
