@@ -9,6 +9,7 @@
     "preview": "vite preview"
   },
   "dependencies": {
+    "@daypilot/daypilot-lite-vue": "^3.20.1",
     "@vueup/vue-quill": "^1.2.0",
     "axios": "^1.6.7",
     "boxicons": "^2.1.4",
