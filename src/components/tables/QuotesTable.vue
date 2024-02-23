@@ -1,6 +1,6 @@
 <script setup lang="ts">
-import { leadHeaders } from "../../data/tableData.ts";
-import { leads } from "../../data/staticData.ts";
+import { orderHeaders } from "../../data/tableData.ts";
+import { orders } from "../../data/staticData.ts";
 import AppTable from "./AppTable.vue";
 import { ref } from "vue";
 import InfoModal from "../partials/InfoModal.vue";
@@ -19,7 +19,7 @@ function openModal(data: any) {
 
 function getDataByNum(index: number | object) {
   if (typeof index === "number") {
-    singleData.value = { ...leads[index], i: index };
+    singleData.value = { ...orders[index], i: index };
   }
 }
 </script>
@@ -31,10 +31,10 @@ function getDataByNum(index: number | object) {
       :show="showModal"
       :data="singleData"
       :next="getDataByNum"
-      :length="leads.length"
+      :length="orders.length"
     />
-    <TableHeader title="lead" />
-    <AppTable :data="leads" :headers="leadHeaders">
+    <TableHeader title="order" />
+    <AppTable :data="orders" :headers="orderHeaders">
       <template #td_id="{ item }">
         <span class="text-mainBlue cursor-pointer" @click="openModal(item)">
           {{ item?.id }}
@@ -54,6 +54,9 @@ function getDataByNum(index: number | object) {
           <span class="text-mainBlue font-bold mr-[2px]">$</span>
           <span>{{ item?.price }}</span>
         </p>
+      </template>
+      <template #td_note>
+        <i class="bx bxs-file text-mainBlue text-lg"></i>
       </template>
     </AppTable>
   </section>

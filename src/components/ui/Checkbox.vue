@@ -10,6 +10,10 @@ const props = defineProps({
     type: Function,
     required: false,
   },
+  isBold: {
+    type: Boolean,
+    required: true,
+  },
 });
 const isChecked = ref<boolean>(false);
 const checkedFunction = () => {
@@ -31,7 +35,11 @@ const checkedFunction = () => {
         class="bx bx-check text-sm absolute top-1/2 left-1/2 -translate-x-[55%] -translate-y-1/2"
       ></i>
     </div>
-    <div v-else class="w-4 h-4 rounded border border-gray-400"></div>
+    <div
+      v-else
+      class="w-4 h-4 rounded border bg-white"
+      :class="props.isBold ? 'border-black' : 'border-gray-400'"
+    ></div>
   </div>
 </template>
 

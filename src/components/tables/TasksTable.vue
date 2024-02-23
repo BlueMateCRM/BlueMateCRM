@@ -1,6 +1,6 @@
 <script setup lang="ts">
-import { leadHeaders } from "../../data/tableData.ts";
-import { leads } from "../../data/staticData.ts";
+import { tasksHeaders } from "../../data/tableData.ts";
+import { tasks } from "../../data/staticData.ts";
 import AppTable from "./AppTable.vue";
 import { ref } from "vue";
 import InfoModal from "../partials/InfoModal.vue";
@@ -19,7 +19,7 @@ function openModal(data: any) {
 
 function getDataByNum(index: number | object) {
   if (typeof index === "number") {
-    singleData.value = { ...leads[index], i: index };
+    singleData.value = { ...tasks[index], i: index };
   }
 }
 </script>
@@ -31,29 +31,37 @@ function getDataByNum(index: number | object) {
       :show="showModal"
       :data="singleData"
       :next="getDataByNum"
-      :length="leads.length"
+      :length="tasks.length"
     />
-    <TableHeader title="lead" />
-    <AppTable :data="leads" :headers="leadHeaders">
+    <TableHeader title="task" />
+    <AppTable :data="tasks" :headers="tasksHeaders">
       <template #td_id="{ item }">
         <span class="text-mainBlue cursor-pointer" @click="openModal(item)">
           {{ item?.id }}
         </span>
       </template>
-      <template #td_vehicle="{ item }">
+      <template #td_done>
         <div class="flex items-center">
-          <div class="flex flex-col mr-[5px]">
-            <i class="bx bxs-ev-station text-mainRed text-sm mb-[2px]"></i>
-            <i class="bx bxs-car text-mainBlue text-sm"></i>
-          </div>
-          <span>{{ item?.vehicle }}</span>
+          <input
+            type="radio"
+            class="w-[18px] h-[18px] border border-mainGray"
+          />
         </div>
       </template>
-      <template #td_price="{ item }">
-        <p>
-          <span class="text-mainBlue font-bold mr-[2px]">$</span>
-          <span>{{ item?.price }}</span>
-        </p>
+      <template #td_task>
+        <i
+          class="bx bx-phone text-gray-400 text-2xl cursor-pointer hover:text-gray-600 duration-200"
+        ></i>
+      </template>
+      <template #td_user="{ item }">
+        <div class="flex items-center">
+          <img
+            src="https://images.unsplash.com/profile-1534796299842-cfc036c59a04?ixlib=rb-4.0.3&crop=faces&fit=crop&w=128&h=128"
+            alt="avatar"
+            class="w-5 h-5 rounded-full object-cover mr-2"
+          />
+          <span>{{ item?.user }}</span>
+        </div>
       </template>
     </AppTable>
   </section>

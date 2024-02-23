@@ -30,7 +30,11 @@ function checkAll() {
       >
         <tr>
           <th scope="col" class="px-3 capitalize font-semibold">
-            <Checkbox :checked="isChecked" :checkAll="checkAll" />
+            <Checkbox
+              :checked="isChecked"
+              :checkAll="checkAll"
+              :isBold="true"
+            />
           </th>
           <th
             v-for="(item, index) in props.headers"
@@ -38,7 +42,7 @@ function checkAll() {
             class="px-3 py-3 capitalize font-semibold"
             :key="index + 'CCMMB'"
           >
-            {{ item.title }}
+            {{ item?.title }}
           </th>
         </tr>
       </thead>
@@ -51,7 +55,7 @@ function checkAll() {
           :key="item.id + 'JJDF'"
         >
           <td class="px-3">
-            <Checkbox :checked="isChecked" />
+            <Checkbox :checked="isChecked" :isBold="false" />
           </td>
           <td
             v-for="(td, tdIndex) in props.headers"
