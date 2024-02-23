@@ -8,7 +8,7 @@ import { status } from "../data/headerData.ts";
 
 const route = useRoute();
 const headerStatus = ref([]);
-const mainPath = ref(null);
+const mainPath = ref("");
 const initialIndex = ref(0);
 
 const changeHeaderStatus = () => {
@@ -22,7 +22,7 @@ const changeHeaderStatus = () => {
   }
 };
 
-const activeStatus = (i: nuber) => {
+const activeStatus = (i: number) => {
   initialIndex.value = i;
 };
 
