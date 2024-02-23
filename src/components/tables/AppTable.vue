@@ -1,4 +1,7 @@
 <script setup lang="ts">
+import { ref } from "vue";
+import Checkbox from "../ui/Checkbox.vue";
+
 const props = defineProps({
   headers: {
     type: Array,
@@ -9,6 +12,11 @@ const props = defineProps({
     required: true,
   },
 });
+
+const isChecked = ref<boolean>(false);
+function checkAll() {
+  isChecked.value = !isChecked.value;
+}
 </script>
 
 <template>
@@ -21,6 +29,9 @@ const props = defineProps({
         class="text-sm text-gray-700 bg-[#E2E8F0] dark:bg-[#DEF7EC] dark:text-gray-400"
       >
         <tr>
+          <th scope="col" class="px-3 capitalize font-semibold">
+            <Checkbox :checked="isChecked" :checkAll="checkAll" />
+          </th>
           <th
             v-for="(item, index) in props.headers"
             scope="col"
@@ -39,6 +50,9 @@ const props = defineProps({
           class="bg-white border-b dark:bg-gray-800 dark:border-gray-700 hover:bg-gray-100 dark:hover:bg-gray-100"
           :key="item.id + 'JJDF'"
         >
+          <td class="px-3">
+            <Checkbox :checked="isChecked" />
+          </td>
           <td
             v-for="(td, tdIndex) in props.headers"
             class="px-3 py-[9.5px] text-[15px]"

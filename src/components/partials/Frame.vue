@@ -5,6 +5,15 @@ import BlotFormatter from "quill-blot-formatter";
 import "@vueup/vue-quill/dist/vue-quill.snow.css";
 let content = ref(1);
 var toolbarOptions = ["bold", "italic", "underline", "link", "list", "clean"];
+const modules = {
+  name: "blotFormatter",
+  module: BlotFormatter,
+  options: {
+    upload: (file) => {
+      console.log(file);
+    },
+  },
+};
 </script>
 <template>
   <div class="w-full">

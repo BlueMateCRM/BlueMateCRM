@@ -4,9 +4,11 @@ import { orders } from "../../data/staticData.ts";
 import AppTable from "./AppTable.vue";
 import { ref } from "vue";
 import InfoModal from "../partials/InfoModal.vue";
+import TableHeader from "../ui/TableHeader.vue";
 
 const showModal = ref<boolean>(false);
 const singleData = ref<any>({});
+
 function hideModal() {
   showModal.value = false;
 }
@@ -31,6 +33,7 @@ function getDataByNum(index: number | object) {
       :next="getDataByNum"
       :length="orders.length"
     />
+    <TableHeader />
     <AppTable :data="orders" :headers="orderHeaders">
       <template #td_id="{ item }">
         <span class="text-mainBlue cursor-pointer" @click="openModal(item)">

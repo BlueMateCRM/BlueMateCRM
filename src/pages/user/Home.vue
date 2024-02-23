@@ -1,10 +1,10 @@
 <script setup lang="ts">
-import ExampleTable from "../../components/tables/ExapleTable.vue";
+import LeadsTable from "../../components/tables/LeadsTable.vue";
 </script>
 
 <template>
   <main>
-    <ExampleTable />
+    <LeadsTable />
   </main>
 </template>
 
