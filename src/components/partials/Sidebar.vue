@@ -50,8 +50,8 @@
       <i class="bx bx-id-card text-xl text-white"></i>
     </router-link>
     <router-link
-      to="/user/statistics"
-      title="statistics"
+      to="/user/insights"
+      title="Insights"
       class="flex w-12 h-12 items-center justify-center rounded-md mb-1"
     >
       <i class="bx bx-line-chart text-xl text-white"></i>
