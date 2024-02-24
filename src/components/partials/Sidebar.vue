@@ -7,62 +7,110 @@
     <span class="flex w-12 h-12 items-center justify-center rounded-md mb-1">
       <i class="bx bxl-stripe text-xl text-white"></i>
     </span>
-    <router-link
-      to="/user/leads"
-      title="leads"
-      class="flex w-12 h-12 items-center justify-center rounded-md mb-1"
+    <el-tooltip
+      class="box-item"
+      effect="dark"
+      content="leads"
+      placement="right"
     >
-      <i class="bx bx-filter-alt text-xl text-white"></i>
-    </router-link>
-    <router-link
-      to="/user/quotes"
-      title="quotes"
-      class="flex w-12 h-12 items-center justify-center rounded-md mb-1"
+      <router-link
+        to="/user/leads"
+        class="flex w-12 h-12 items-center justify-center rounded-md mb-1"
+      >
+        <i class="bx bx-filter-alt text-xl text-white"></i>
+      </router-link>
+    </el-tooltip>
+    <el-tooltip
+      class="box-item"
+      effect="dark"
+      content="quotes"
+      placement="right"
     >
-      <i class="bx bx-dollar-circle text-xl text-white"></i>
-    </router-link>
-    <router-link
-      to="/user/orders"
-      title="orders"
-      class="flex w-12 h-12 items-center justify-center rounded-md mb-1"
+      <router-link
+        to="/user/quotes"
+        class="flex w-12 h-12 items-center justify-center rounded-md mb-1"
+      >
+        <i class="bx bx-dollar-circle text-xl text-white"></i>
+      </router-link>
+    </el-tooltip>
+    <el-tooltip
+      class="box-item"
+      effect="dark"
+      content="orders"
+      placement="right"
     >
-      <i class="bx bx-task text-xl text-white"></i>
-    </router-link>
-    <router-link
-      to="/user/messages"
-      title="messages"
-      class="flex w-12 h-12 items-center justify-center rounded-md mb-1"
+      <router-link
+        to="/user/orders"
+        class="flex w-12 h-12 items-center justify-center rounded-md mb-1"
+      >
+        <i class="bx bx-task text-xl text-white"></i>
+      </router-link>
+    </el-tooltip>
+    <el-tooltip
+      class="box-item"
+      effect="dark"
+      content="messages"
+      placement="right"
     >
-      <i class="bx bx-envelope text-xl text-white"></i>
-    </router-link>
-    <router-link
-      to="/user/tasks"
-      title="tasks"
-      class="flex w-12 h-12 items-center justify-center rounded-md mb-1"
+      <router-link
+        to="/user/messages"
+        class="flex w-12 h-12 items-center justify-center rounded-md mb-1"
+      >
+        <i class="bx bx-envelope text-xl text-white"></i>
+      </router-link>
+    </el-tooltip>
+    <el-tooltip
+      class="box-item"
+      effect="dark"
+      content="tasks"
+      placement="right"
     >
-      <i class="bx bx-calendar text-xl text-white"></i>
-    </router-link>
-    <router-link
-      to="/user/profile"
-      title="profile"
-      class="flex w-12 h-12 items-center justify-center rounded-md mb-1"
+      <router-link
+        to="/user/tasks"
+        class="flex w-12 h-12 items-center justify-center rounded-md mb-1"
+      >
+        <i class="bx bx-calendar text-xl text-white"></i>
+      </router-link>
+    </el-tooltip>
+    <el-tooltip
+      class="box-item"
+      effect="dark"
+      content="profile"
+      placement="right"
     >
-      <i class="bx bx-id-card text-xl text-white"></i>
-    </router-link>
-    <router-link
-      to="/user/insights"
-      title="Insights"
-      class="flex w-12 h-12 items-center justify-center rounded-md mb-1"
+      <router-link
+        to="/user/profile"
+        class="flex w-12 h-12 items-center justify-center rounded-md mb-1"
+      >
+        <i class="bx bx-id-card text-xl text-white"></i>
+      </router-link>
+    </el-tooltip>
+    <el-tooltip
+      class="box-item"
+      effect="dark"
+      content="insights"
+      placement="right"
     >
-      <i class="bx bx-line-chart text-xl text-white"></i>
-    </router-link>
-    <router-link
-      to="/user/settings"
-      title="settings"
-      class="flex w-12 h-12 items-center justify-center rounded-md mb-1"
+      <router-link
+        to="/user/insights"
+        class="flex w-12 h-12 items-center justify-center rounded-md mb-1"
+      >
+        <i class="bx bx-line-chart text-xl text-white"></i>
+      </router-link>
+    </el-tooltip>
+    <el-tooltip
+      class="box-item"
+      effect="dark"
+      content="settings"
+      placement="right"
     >
-      <i class="bx bx-dots-horizontal-rounded text-xl text-white"></i>
-    </router-link>
+      <router-link
+        to="/user/settings"
+        class="flex w-12 h-12 items-center justify-center rounded-md mb-1"
+      >
+        <i class="bx bx-dots-horizontal-rounded text-xl text-white"></i>
+      </router-link>
+    </el-tooltip>
   </aside>
 </template>
 
