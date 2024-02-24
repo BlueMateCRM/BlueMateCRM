@@ -3,8 +3,8 @@ import { orderHeaders } from "../../data/tableData.ts";
 import { orders } from "../../data/staticData.ts";
 import AppTable from "./AppTable.vue";
 import { ref } from "vue";
-import InfoModal from "../partials/InfoModal.vue";
-import TableHeader from "../ui/TableHeader.vue";
+import InfoModal from "../modals/InfoModal.vue";
+import TableHeader from "../ui/headers/TableHeader.vue";
 
 const showModal = ref<boolean>(false);
 const singleData = ref<any>({});

@@ -1,6 +1,6 @@
 <script setup lang="ts">
 import Button from "../buttons/Button.vue";
-import Select from "../ui/Select.vue";
+import Select from "../form_elements/Select.vue";
 const props = defineProps({
   close: {
     type: Function,

@@ -1,6 +1,6 @@
 <script setup lang="ts">
 import { ref } from "vue";
-import Checkbox from "../ui/Checkbox.vue";
+import Checkbox from "../ui/form_elements/Checkbox.vue";
 
 const props = defineProps({
   headers: {
