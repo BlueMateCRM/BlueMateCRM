@@ -93,7 +93,7 @@ var toolbarOptions = ["bold", "italic", "underline", "link","image", {'list':'bu
       <!-- Email -->
       <div v-show="content == 4" class="h-full">
         <!-- <Email/> -->
-        <Contact/>
+        <Email/>
       </div>
       <!-- Files -->
       <div v-show="content == 5" class="h-full">

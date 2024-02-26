@@ -14,6 +14,7 @@ export default {
         textGray: "#666666",
         textBlack: "#21232C",
         bglightGray: "#FAFAFA",
+        bgyellow:"#FFF4CC"
       },
       borderRadius: {
         main: "5px",
