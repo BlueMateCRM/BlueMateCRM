@@ -10,7 +10,16 @@ import Contact from "../ui/Contract.vue"
 import Payment from "../ui/Payment.vue"
 import "@vueup/vue-quill/dist/vue-quill.snow.css";
 let content = ref(1);
-var toolbarOptions = ["bold", "italic", "underline", "link","image", {'list':'bullet'}, {'list':'ordered'}, {'indent':'-1'}, {'indent':'+1'}, "clean"];
+var toolbarOptions = ["bold", "italic", "underline", "link", "ql-image", "clean"];
+const modules = {
+  name: "blotFormatter",
+  module: BlotFormatter,
+  options: {
+    upload: (file) => {
+      console.log(file);
+    },
+  },
+};
 </script>
 <template>
   <div class="w-full">
@@ -77,7 +86,7 @@ var toolbarOptions = ["bold", "italic", "underline", "link","image", {'list':'bu
     </nav>
 
     <!-- Frame content -->
-    <div class="w-full border bg-white rounded-b-md border-gray-400 h-[160px]">
+    <div class="w-full border bg-white rounded-b-md border-gray-400">
       <!-- Notes -->
       <div v-show="content == 1" class="bg-[#FFF4CC] h-full overflow-y-auto">
         <QuillEditor :modules="modules" :toolbar="toolbarOptions" />

@@ -1,6 +1,35 @@
 <script setup lang="ts">
 import SidebarVue from "../components/partials/Sidebar.vue";
 import Header from "../components/partials/Header.vue";
+
+import { ref, watch, onUpdated } from "vue";
+import { useRoute } from "vue-router";
+import { status } from "../data/headerData.ts";
+
+const route = useRoute();
+const headerStatus = ref([]);
+const mainPath = ref("");
+const initialIndex = ref(0);
+
+const changeHeaderStatus = () => {
+  const path = route.fullPath.split("/");
+  const key = path[path?.length - 1];
+  initialIndex.value = 0;
+  if (status[key]) {
+    headerStatus.value = status[key];
+  } else {
+    headerStatus.value = [key];
+  }
+};
+
+const activeStatus = (i: number) => {
+  initialIndex.value = i;
+};
+
+onUpdated(() => {
+  mainPath.value = route.fullPath;
+});
+watch(mainPath, changeHeaderStatus);
 </script>
 
 <template>
@@ -12,7 +41,12 @@ import Header from "../components/partials/Header.vue";
 
     <!-- main content -->
     <div class="content overflow-y-auto overflow-x-hidden h-screen">
-      <Header />
+      <Header
+        :initial="changeHeaderStatus"
+        :status="headerStatus"
+        :i="initialIndex"
+        :active="activeStatus"
+      />
       <div class="p-4">
         <RouterView />
       </div>

@@ -1,7 +1,11 @@
-<script setup lang="ts"></script>
+<script setup lang="ts">
+import OrdersTable from "../../components/tables/OrdersTable.vue";
+</script>
 
 <template>
-  <main>Orders</main>
+  <main>
+    <OrdersTable />
+  </main>
 </template>
 
 <style scoped></style>

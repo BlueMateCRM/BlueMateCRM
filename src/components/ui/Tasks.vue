@@ -1,11 +1,9 @@
 <script lang="ts" setup>
 import { ref } from "vue";
 import Calendar from "./Calendar.vue";
-import Select from "./Select.vue";
 
 // input
 const input1 = ref("");
-const textarea = ref('')
 
 let content = ref(1);
 </script>
@@ -59,52 +57,6 @@ let content = ref(1);
             <p class="text-lg">Deadline</p>
           </div>
         </nav>
-      </div>
-      <!-- Nav's item -->
-      <!-- Call -->
-      <div v-show="content === 1" class="flex-col">
-        <div class="w-[70%] py-2">
-          <el-input
-            v-model="textarea"
-            maxlength="60"
-            show-word-limit
-            type="textarea"
-            class="bg-bgyellow"
-          />
-        </div>
-        <div>
-          <Select />
-        </div>
-      </div>
-      <!-- Email -->
-      <div v-show="content === 2" class="flex">
-        <div>
-          <p>Email</p>
-          <!-- <input type="text" placeholder="Input" class="border p-2 rounded-md" /> -->
-        </div>
-        <div>
-          <Select />
-        </div>
-      </div>
-      <!-- Tasks -->
-      <div v-show="content === 3" class="flex">
-        <div>
-          <p>Tasks</p>
-          <!-- <input type="text" placeholder="Input" class="border p-2 rounded-md" /> -->
-        </div>
-        <div>
-          <Select />
-        </div>
-      </div>
-      <!-- Deadline -->
-      <div v-show="content === 4" class="flex">
-        <div>
-          <p>Deadline</p>
-          <!-- <input type="text" placeholder="Input" class="border p-2 rounded-md" /> -->
-        </div>
-        <div>
-          <Select />
-        </div>
       </div>
     </div>
     <!-- Right Calendar -->

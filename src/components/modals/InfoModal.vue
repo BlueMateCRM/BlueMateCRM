@@ -1,8 +1,10 @@
 <script setup lang="ts">
-import Frame from "./Frame.vue";
 import { ref } from "vue";
-import ModalHeader from "../ui/ModalHeader.vue";
-import AppAccordion from "../ui/AppAccordion.vue";
+import Frame from "../partials/Frame.vue";
+import ModalHeader from "../ui/headers/ModalHeader.vue";
+import AsideAccordion from "../accordions/AsideAccordion.vue";
+import AppAccordion from "../accordions/AppAccordion.vue";
+import MainMap from "../partials/MainMap.vue";
 
 const props = defineProps({
   close: {
@@ -103,7 +105,7 @@ function changeWidth() {
         <aside
           class="modal-aside pb-4 w-[420px] h-full overflow-y-auto border-r border-gray-300"
         >
-          <AppAccordion title="Details" :data="props.data" :isOpen="true">
+          <AsideAccordion title="Details" :data="props.data" :isOpen="true">
             <template #operation>
               <button class="w-6 h-5 rounded border border-gray-200 bg-white">
                 <i
@@ -111,8 +113,8 @@ function changeWidth() {
                 ></i>
               </button>
             </template>
-          </AppAccordion>
-          <AppAccordion title="Person" :data="props.data" :isOpen="false">
+          </AsideAccordion>
+          <AsideAccordion title="Person" :data="props.data" :isOpen="false">
             <template #operation>
               <button class="w-6 h-5 rounded border border-gray-200 bg-white">
                 <i
@@ -120,8 +122,8 @@ function changeWidth() {
                 ></i>
               </button>
             </template>
-          </AppAccordion>
-          <AppAccordion title="Payment" :data="props.data" :isOpen="false">
+          </AsideAccordion>
+          <AsideAccordion title="Payment" :data="props.data" :isOpen="false">
             <template #payment>
               <button
                 class="px-2 h-5 text-xs rounded border border-mainRed bg-mainRed text-white font-medium"
@@ -136,11 +138,14 @@ function changeWidth() {
                 ></i>
               </button>
             </template>
-          </AppAccordion>
-          <AppAccordion title="Date" :data="props.data" :isOpen="false" />
+          </AsideAccordion>
+          <AsideAccordion title="Date" :data="props.data" :isOpen="false" />
         </aside>
         <section class="modal-content h-auto overflow-auto bg-bglightGray p-4">
           <Frame />
+          <AppAccordion title="Map" :isOpen="true" class="mt-5">
+            <MainMap />
+          </AppAccordion>
         </section>
       </div>
     </div>

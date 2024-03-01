@@ -1,9 +1,31 @@
 <script setup>
 import { ref, onMounted } from "vue";
+
+const props = defineProps({
+  initial: {
+    type: Function,
+    required: true,
+  },
+  status: {
+    type: Array,
+    required: true,
+  },
+  i: {
+    type: Number,
+    required: true,
+  },
+  active: {
+    type: Function,
+    required: true,
+  },
+});
+
 const input = ref("");
-const content = ref(null);
-onMounted(() => {
-  content.value = 1;
+const content = ref(props.i);
+
+onMounted(async () => {
+  props.initial();
+  content.value = props.i;
 });
 </script>
 
@@ -14,53 +36,13 @@ onMounted(() => {
     <!-- status list -->
     <nav class="flex text-base cursor-pointer">
       <div
-        class="font-semibold py-4 px-3"
-        :class="{ price: content == 1 }"
-        @click="content = 1"
+        v-for="(item, index) in props.status"
+        class="font-semibold py-4 px-3 capitalize"
+        :class="{ price: props.i == index }"
+        @click="props.active(index)"
+        :key="index + 'AAVVDD'"
       >
-        Quotes
-      </div>
-      <div
-        class="font-semibold py-4 px-3"
-        :class="{ price: content == 2 }"
-        @click="content = 2"
-      >
-        Follow up
-      </div>
-      <div
-        class="font-semibold py-4 px-3"
-        :class="{ price: content == 3 }"
-        @click="content = 3"
-      >
-        Warm
-      </div>
-      <div
-        class="font-semibold py-4 px-3"
-        :class="{ price: content == 4 }"
-        @click="content = 4"
-      >
-        Ongiong
-      </div>
-      <div
-        class="font-semibold py-4 px-3"
-        :class="{ price: content == 5 }"
-        @click="content = 5"
-      >
-        Upcoming
-      </div>
-      <div
-        class="font-semibold py-4 px-3"
-        :class="{ price: content == 6 }"
-        @click="content = 6"
-      >
-        On hold
-      </div>
-      <div
-        class="font-semibold py-4 px-3"
-        :class="{ price: content == 7 }"
-        @click="content = 7"
-      >
-        Archived
+        {{ item }}
       </div>
     </nav>
 

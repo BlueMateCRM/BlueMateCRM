@@ -33,8 +33,8 @@ export const userRoutes = {
       component: () => import("../pages/user/Profile.vue"),
     },
     {
-      path: "statistics",
-      name: "user-statistics",
+      path: "insights",
+      name: "user-insights",
       component: () => import("../pages/user/Statistics.vue"),
     },
     {
