@@ -10,6 +10,7 @@ const route = useRoute();
 const headerStatus = ref([]);
 const mainPath = ref("");
 const initialIndex = ref(0);
+const isExist = ref(false);
 
 const changeHeaderStatus = () => {
   const path = route.fullPath.split("/");
@@ -19,6 +20,12 @@ const changeHeaderStatus = () => {
     headerStatus.value = status[key];
   } else {
     headerStatus.value = [key];
+  }
+
+  if (path.includes("settings")) {
+    isExist.value = true;
+  } else {
+    isExist.value = false;
   }
 };
 
@@ -47,7 +54,7 @@ watch(mainPath, changeHeaderStatus);
         :i="initialIndex"
         :active="activeStatus"
       />
-      <div class="p-4">
+      <div :class="isExist ? '' : 'p-4'">
         <RouterView />
       </div>
     </div>

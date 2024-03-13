@@ -1,7 +1,11 @@
-<script setup lang="ts"></script>
+<script setup lang="ts">
+import SoonAdded from "../../components/ui/errors/SoonAdded.vue";
+</script>
 
 <template>
-  <main>Messages</main>
+  <main>
+    <SoonAdded title="Messages Page" />
+  </main>
 </template>
 
 <style scoped></style>
