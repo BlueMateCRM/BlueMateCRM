@@ -39,8 +39,24 @@ export const userRoutes = {
     },
     {
       path: "settings",
-      name: "user-settings",
-      component: () => import("../pages/user/Settings.vue"),
+      component: () => import("../pages/user/settings/index.vue"),
+      children: [
+        {
+          path: "users",
+          name: "user-settings-users",
+          component: () => import("../pages/user/settings/pages/Users.vue"),
+        },
+      ],
+    },
+    {
+      path: "technique",
+      name: "user-technique",
+      component: () => import("../pages/user/Technique.vue"),
+    },
+    {
+      path: "other",
+      name: "user-others",
+      component: () => import("../pages/user/Other.vue"),
     },
   ],
 };
