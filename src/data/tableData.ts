@@ -46,3 +46,10 @@ export const usersHeader = [
   { title: "status", value: "status" },
   { title: "User created on", value: "createdAt" },
 ];
+
+export const teamsHeader = [
+  { title: "Name", value: "name" },
+  { title: "users", value: "users" },
+  { title: "status", value: "status" },
+  { title: "Team created on", value: "createdAt" },
+];

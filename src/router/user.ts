@@ -46,6 +46,11 @@ export const userRoutes = {
           name: "user-settings-users",
           component: () => import("../pages/user/settings/pages/Users.vue"),
         },
+        {
+          path: "teams",
+          name: "user-settings-teams",
+          component: () => import("../pages/user/settings/pages/Teams.vue"),
+        },
       ],
     },
     {

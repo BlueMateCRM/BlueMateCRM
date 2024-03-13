@@ -218,3 +218,36 @@ export const users = [
     createdAt: "01/31/2024 12:19 AM",
   },
 ];
+
+export const teams = [
+  {
+    name: "Ali.T",
+    users: [
+      "John",
+      "Ali",
+      "Johnatan",
+      "Sam",
+      "Jack",
+      "Mike",
+      "Alice",
+      "Scott",
+      "Samuuel",
+      "Joanna",
+      "Salim",
+    ],
+    status: true,
+    createdAt: "01/13/2024 09:27 AM",
+  },
+  {
+    name: "Daniel.T",
+    users: [],
+    status: false,
+    createdAt: "01/13/2024 09:27 AM",
+  },
+  {
+    name: "Sean.T",
+    users: ["Scott", "Samuuel", "Joanna", "Salim"],
+    status: true,
+    createdAt: "01/13/2024 09:27 AM",
+  },
+];

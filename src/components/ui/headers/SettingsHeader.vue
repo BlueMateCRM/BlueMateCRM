@@ -22,7 +22,7 @@ const props = defineProps({
     <div
       class="border-b border-black flex items-end justify-between pb-[6.5px]"
     >
-      <!-- create leads -->
+      <!-- create & filter -->
       <div class="flex gap-x-[10px]">
         <h2 class="text-xl text-textBlack font-semibold pr-2">
           {{ props.title }}
