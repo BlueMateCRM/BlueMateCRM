@@ -4,7 +4,6 @@ import AppTable from "../../../../components/tables/AppTable.vue";
 import { merchantHeader } from "../../../../data/tableData.ts";
 import { VoIP } from "../../../../data/staticData.ts";
 import SettingsHeader from "../../../../components/ui/headers/SettingsHeader.vue";
-import Button from "../../../../components/ui/buttons/Button.vue";
 </script>
 
 <template>

@@ -375,6 +375,54 @@ export const providers = [
   },
 ];
 
+export const distribution = [
+  {
+    users: "Ali.Brian.ML",
+    recieve: 12,
+    queue: 2,
+    multiple: "1X",
+    hours: "00:00 am - 11:59 pm",
+    status: true,
+    pausedBy: null,
+  },
+  {
+    users: "Ali.Brian.ML",
+    recieve: 12,
+    queue: 5,
+    multiple: "1X",
+    hours: "00:00 am - 10:00 pm",
+    status: true,
+    pausedBy: null,
+  },
+  {
+    users: "Ali.Brian.ML",
+    recieve: 12,
+    queue: 1,
+    multiple: "1X",
+    hours: "00:00 am - 11:59 pm",
+    status: true,
+    pausedBy: null,
+  },
+  {
+    users: "Ali.Brian.ML",
+    recieve: 12,
+    queue: 6,
+    multiple: "1X",
+    hours: "02:00 am - 11:59 pm",
+    status: true,
+    pausedBy: null,
+  },
+  {
+    users: "Ali.Brian.ML",
+    recieve: 12,
+    queue: 0,
+    multiple: "1X",
+    hours: "06:00 am - 08:00 pm",
+    status: false,
+    pausedBy: "Ali.Brian.ML",
+  },
+];
+
 export const ground = [
   {
     name: "Ground 1.0",
@@ -528,6 +576,16 @@ export const international = [
   },
 ];
 
+export const company = [
+  {
+    name: "Mate Logistics Inc",
+    mainline: "(999) 999-9999",
+    fax: "(999) 999-9999",
+    email: "info@matelogistics.com",
+    address: "65-34 Myrtle Ave #2f, Queens, NY 11385",
+  },
+];
+
 export const merchant = [
   {
     name: "Authorize",
@@ -576,5 +634,185 @@ export const templates = [
     type: "Email",
     createdAt: "01/13/2024 09:27 AM",
     author: "Ali.Brian.ML",
+  },
+];
+
+export const shiper = [
+  {
+    fullname: "Full name",
+    firstname: "First name",
+    lastname: "Last name",
+    phone1: "Phone",
+    phone2: "Phone 2",
+    email: "Email",
+  },
+  {
+    fullname: "full_name",
+    firstname: "firstname",
+    lastname: "lastname",
+    phone1: "contactphone",
+    phone2: "contact phone",
+    email: "contact email",
+  },
+  {
+    fullname: "customer_name",
+    firstname: 12,
+    lastname: 12,
+    phone1: "contact phone",
+    phone2: 12,
+    email: 12,
+  },
+  {
+    fullname: "shipper name",
+    firstname: 12,
+    lastname: 12,
+    phone1: 12,
+    phone2: 12,
+    email: 12,
+  },
+  {
+    fullname: "shipper_name",
+    firstname: 12,
+    lastname: 12,
+    phone1: 12,
+    phone2: 12,
+    email: 12,
+  },
+];
+
+export const location = [
+  {
+    pickup_city: "Origin city",
+    pickup_state: "Origin state",
+    pickup_zip: "Origin zip",
+    dropoff_city: "Destination city",
+    dropoff_state: "Destination state",
+    dropoff_zip: "Destination zip",
+  },
+  {
+    pickup_city: 12,
+    pickup_state: 12,
+    pickup_zip: 12,
+    dropoff_city: 12,
+    dropoff_state: 12,
+    dropoff_zip: 12,
+  },
+  {
+    pickup_city: 12,
+    pickup_state: 12,
+    pickup_zip: 12,
+    dropoff_city: 12,
+    dropoff_state: 12,
+    dropoff_zip: 12,
+  },
+  {
+    pickup_city: 12,
+    pickup_state: 12,
+    pickup_zip: 12,
+    dropoff_city: 12,
+    dropoff_state: 12,
+    dropoff_zip: 12,
+  },
+  {
+    pickup_city: 12,
+    pickup_state: 12,
+    pickup_zip: 12,
+    dropoff_city: 12,
+    dropoff_state: 12,
+    dropoff_zip: 12,
+  },
+  {
+    pickup_city: 12,
+    pickup_state: 12,
+    pickup_zip: 12,
+    dropoff_city: 12,
+    dropoff_state: 12,
+    dropoff_zip: 12,
+  },
+];
+
+export const vehicle = [
+  {
+    year: "Year",
+    make: "Make",
+    model: "Model",
+    condition: "Running Condition",
+    veh_type: "Type",
+    tra_type: "Trailer type",
+  },
+  {
+    year: 12,
+    make: 12,
+    model: 12,
+    condition: 12,
+    veh_type: 12,
+    tra_type: 12,
+  },
+  {
+    year: 12,
+    make: 12,
+    model: 12,
+    condition: 12,
+    veh_type: 12,
+    tra_type: 12,
+  },
+  {
+    year: 12,
+    make: 12,
+    model: 12,
+    condition: 12,
+    veh_type: 12,
+    tra_type: 12,
+  },
+  {
+    year: 12,
+    make: 12,
+    model: 12,
+    condition: 12,
+    veh_type: 12,
+    tra_type: 12,
+  },
+];
+
+export const shipment = [
+  {
+    ship_date: "Estimated ship date",
+    note: "Comments",
+    a: "",
+    b: "",
+    c: "",
+    d: "",
+  },
+  {
+    ship_date: 12,
+    note: 12,
+    a: "",
+    b: "",
+    c: "",
+    d: "",
+  },
+  {
+    ship_date: 12,
+    note: 12,
+    a: "",
+    b: "",
+    c: "",
+    d: "",
+  },
+  {
+    ship_date: 12,
+    note: 12,
+    a: "",
+    b: "",
+    c: "",
+    d: "",
+  },
+  {
+    ship_date: 12,
+    note: 12,
+    a: "",
+    b: "",
+    c: "",
+    d: "",
   },
 ];

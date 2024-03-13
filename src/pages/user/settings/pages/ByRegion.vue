@@ -4,7 +4,6 @@ import AppTable from "../../../../components/tables/AppTable.vue";
 import { groundHeader } from "../../../../data/tableData.ts";
 import { region } from "../../../../data/staticData.ts";
 import SettingsHeader from "../../../../components/ui/headers/SettingsHeader.vue";
-import Button from "../../../../components/ui/buttons/Button.vue";
 </script>
 
 <template>
