@@ -35,3 +35,14 @@ export const tasksHeaders = [
   { title: "deadline", value: "deadline" },
   { title: "user", value: "user" },
 ];
+
+export const usersHeader = [
+  { title: "User name", value: "username" },
+  { title: "first name", value: "firstname" },
+  { title: "last name", value: "lastname" },
+  { title: "access role", value: "role" },
+  { title: "team", value: "team" },
+  { title: "position", value: "position" },
+  { title: "status", value: "status" },
+  { title: "User created on", value: "createdAt" },
+];
