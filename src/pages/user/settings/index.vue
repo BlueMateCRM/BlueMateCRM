@@ -6,7 +6,7 @@ import SettingsSidebar from "../../../components/partials/SettingsSidebar.vue";
   <main class="settings flex">
     <SettingsSidebar class="w-[256px] h-full" />
     <div
-      class="settings__content content h-full py-[10px] px-5 bg-bglightGray overflow-x-hidden overflow-y-auto"
+      class="settings__content content h-full py-[10px] px-4 bg-bglightGray overflow-x-hidden overflow-y-auto"
     >
       <router-view></router-view>
     </div>

@@ -68,5 +68,22 @@ export const providersHeader = [
   { title: "Status", value: "status" },
   { title: "Type", value: "type" },
   { title: "Created on", value: "createdAt" },
-  { title: "Created on", value: "author" },
+  { title: "Created by", value: "author" },
+];
+
+export const groundHeader = [
+  { title: "Name", value: "name" },
+  { title: "Status", value: "status" },
+  { title: "Created on", value: "createdAt" },
+  { title: "Created by", value: "author" },
+  { title: "Last time edited on", value: "updatedAt" },
+  { title: "Last edited by", value: "editAuthor" },
+];
+
+export const merchantHeader = [
+  { title: "Name", value: "name" },
+  { title: "Status", value: "status" },
+  { title: "Type", value: "type" },
+  { title: "Created on", value: "createdAt" },
+  { title: "Created by", value: "author" },
 ];

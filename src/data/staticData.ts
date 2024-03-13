@@ -374,3 +374,207 @@ export const providers = [
     author: "Ali.Brian.ML",
   },
 ];
+
+export const ground = [
+  {
+    name: "Ground 1.0",
+    status: false,
+    createdAt: "01/13/2024 09:27 AM",
+    author: "Ali.Brian.ML",
+    updatedAt: "01/13/2024 09:27 AM",
+    editAuthor: "Ali.Brian.ML",
+  },
+  {
+    name: "Ground 1.1",
+    status: false,
+    createdAt: "01/13/2024 09:27 AM",
+    author: "Ali.Brian.ML",
+    updatedAt: "01/13/2024 09:27 AM",
+    editAuthor: "Ali.Brian.ML",
+  },
+  {
+    name: "Ground 1.2",
+    status: true,
+    createdAt: "01/13/2024 09:27 AM",
+    author: "Ali.Brian.ML",
+    updatedAt: "01/13/2024 09:27 AM",
+    editAuthor: "Ali.Brian.ML",
+  },
+  {
+    name: "Ground 1.3",
+    status: false,
+    createdAt: "01/13/2024 09:27 AM",
+    author: "Ali.Brian.ML",
+    updatedAt: "01/13/2024 09:27 AM",
+    editAuthor: "Ali.Brian.ML",
+  },
+  {
+    name: "Ground 1.4",
+    status: false,
+    createdAt: "01/13/2024 09:27 AM",
+    author: "Ali.Brian.ML",
+    updatedAt: "01/13/2024 09:27 AM",
+    editAuthor: "Ali.Brian.ML",
+  },
+  {
+    name: "Ground 1.5",
+    status: false,
+    createdAt: "01/13/2024 09:27 AM",
+    author: "Ali.Brian.ML",
+    updatedAt: "01/13/2024 09:27 AM",
+    editAuthor: "Ali.Brian.ML",
+  },
+];
+
+export const region = [
+  {
+    name: "Hawaii and Alaska 1.0",
+    status: false,
+    createdAt: "01/13/2024 09:27 AM",
+    author: "Ali.Brian.ML",
+    updatedAt: "01/13/2024 09:27 AM",
+    editAuthor: "Ali.Brian.ML",
+  },
+  {
+    name: "Hawaii and Alaska 1.1",
+    status: false,
+    createdAt: "01/13/2024 09:27 AM",
+    author: "Ali.Brian.ML",
+    updatedAt: "01/13/2024 09:27 AM",
+    editAuthor: "Ali.Brian.ML",
+  },
+  {
+    name: "Hawaii and Alaska 1.2",
+    status: true,
+    createdAt: "01/13/2024 09:27 AM",
+    author: "Ali.Brian.ML",
+    updatedAt: "01/13/2024 09:27 AM",
+    editAuthor: "Ali.Brian.ML",
+  },
+  {
+    name: "Hawaii and Alaska 1.3",
+    status: false,
+    createdAt: "01/13/2024 09:27 AM",
+    author: "Ali.Brian.ML",
+    updatedAt: "01/13/2024 09:27 AM",
+    editAuthor: "Ali.Brian.ML",
+  },
+  {
+    name: "Hawaii and Alaska 1.4",
+    status: false,
+    createdAt: "01/13/2024 09:27 AM",
+    author: "Ali.Brian.ML",
+    updatedAt: "01/13/2024 09:27 AM",
+    editAuthor: "Ali.Brian.ML",
+  },
+  {
+    name: "Hawaii and Alaska 1.5",
+    status: false,
+    createdAt: "01/13/2024 09:27 AM",
+    author: "Ali.Brian.ML",
+    updatedAt: "01/13/2024 09:27 AM",
+    editAuthor: "Ali.Brian.ML",
+  },
+];
+
+export const international = [
+  {
+    name: "International 1.0",
+    status: false,
+    createdAt: "01/13/2024 09:27 AM",
+    author: "Ali.Brian.ML",
+    updatedAt: "01/13/2024 09:27 AM",
+    editAuthor: "Ali.Brian.ML",
+  },
+  {
+    name: "International 1.1",
+    status: false,
+    createdAt: "01/13/2024 09:27 AM",
+    author: "Ali.Brian.ML",
+    updatedAt: "01/13/2024 09:27 AM",
+    editAuthor: "Ali.Brian.ML",
+  },
+  {
+    name: "International 1.2",
+    status: true,
+    createdAt: "01/13/2024 09:27 AM",
+    author: "Ali.Brian.ML",
+    updatedAt: "01/13/2024 09:27 AM",
+    editAuthor: "Ali.Brian.ML",
+  },
+  {
+    name: "International 1.3",
+    status: false,
+    createdAt: "01/13/2024 09:27 AM",
+    author: "Ali.Brian.ML",
+    updatedAt: "01/13/2024 09:27 AM",
+    editAuthor: "Ali.Brian.ML",
+  },
+  {
+    name: "International 1.4",
+    status: false,
+    createdAt: "01/13/2024 09:27 AM",
+    author: "Ali.Brian.ML",
+    updatedAt: "01/13/2024 09:27 AM",
+    editAuthor: "Ali.Brian.ML",
+  },
+  {
+    name: "International 1.5",
+    status: false,
+    createdAt: "01/13/2024 09:27 AM",
+    author: "Ali.Brian.ML",
+    updatedAt: "01/13/2024 09:27 AM",
+    editAuthor: "Ali.Brian.ML",
+  },
+];
+
+export const merchant = [
+  {
+    name: "Authorize",
+    status: true,
+    type: "Authorize.net",
+    createdAt: "01/13/2024 09:27 AM",
+    author: "Ali.Brian.ML",
+  },
+  {
+    name: "PayPal",
+    status: false,
+    type: "PayPal",
+    createdAt: "01/13/2024 09:27 AM",
+    author: "Ali.Brian.ML",
+  },
+];
+
+export const VoIP = [
+  {
+    name: "Zoom phone",
+    status: true,
+    type: "Zoom",
+    createdAt: "01/13/2024 09:27 AM",
+    author: "Ali.Brian.ML",
+  },
+  {
+    name: "Dialpad",
+    status: false,
+    type: "Dialpad",
+    createdAt: "01/13/2024 09:27 AM",
+    author: "Ali.Brian.ML",
+  },
+];
+
+export const templates = [
+  {
+    name: "Initial text",
+    status: true,
+    type: "SMS",
+    createdAt: "01/13/2024 09:27 AM",
+    author: "Ali.Brian.ML",
+  },
+  {
+    name: "Initial quote",
+    status: false,
+    type: "Email",
+    createdAt: "01/13/2024 09:27 AM",
+    author: "Ali.Brian.ML",
+  },
+];

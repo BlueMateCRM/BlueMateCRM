@@ -18,7 +18,7 @@ const props = defineProps({
 </script>
 
 <template>
-  <header class="mt-2 mb-4 relative z-20">
+  <header class="mt-2 mb-3 relative z-20">
     <div
       class="border-b border-black flex items-end justify-between pb-[6.5px]"
     >
