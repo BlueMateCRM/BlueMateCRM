@@ -51,6 +51,16 @@ export const userRoutes = {
           name: "user-settings-teams",
           component: () => import("../pages/user/settings/pages/Teams.vue"),
         },
+        {
+          path: "roles",
+          name: "user-settings-roles",
+          component: () => import("../pages/user/settings/pages/Roles.vue"),
+        },
+        {
+          path: "providers",
+          name: "user-settings-providers",
+          component: () => import("../pages/user/settings/pages/Providers.vue"),
+        },
       ],
     },
     {

@@ -49,7 +49,24 @@ export const usersHeader = [
 
 export const teamsHeader = [
   { title: "Name", value: "name" },
-  { title: "users", value: "users" },
-  { title: "status", value: "status" },
+  { title: "Users", value: "users" },
+  { title: "Status", value: "status" },
   { title: "Team created on", value: "createdAt" },
+];
+
+export const rolesHeader = [
+  { title: "Name", value: "name" },
+  { title: "Users", value: "users" },
+  { title: "Status", value: "status" },
+  { title: "User created on", value: "createdAt" },
+];
+
+export const providersHeader = [
+  { title: "Name", value: "name" },
+  { title: "Email", value: "email" },
+  { title: "Subject", value: "subject" },
+  { title: "Status", value: "status" },
+  { title: "Type", value: "type" },
+  { title: "Created on", value: "createdAt" },
+  { title: "Created on", value: "author" },
 ];

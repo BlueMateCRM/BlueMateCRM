@@ -46,6 +46,7 @@ const props = defineProps({
 
       <!-- info -->
       <div class="flex items-center gap-x-[10px]">
+        <slot name="action"></slot>
         <span class="font-semibold text-textGray">
           Total {{ props.length }} {{ props.name }}
         </span>

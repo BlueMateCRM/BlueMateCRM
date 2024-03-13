@@ -10,7 +10,7 @@ import SettingsHeader from "../../../../components/ui/headers/SettingsHeader.vue
   <SettingsHeader title="Users" name="users" :length="users.length" />
   <AppTable :data="users" :headers="usersHeader">
     <template #td_username="{ item }">
-      <span class="text-mainBlue cursor-pointer">
+      <span class="text-mainBlue font-medium cursor-pointer">
         {{ item?.username }}
       </span>
     </template>

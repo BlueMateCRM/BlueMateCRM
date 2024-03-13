@@ -1,14 +1,14 @@
 <script setup lang="ts">
 import { ref } from "vue";
 import AppTable from "../../../../components/tables/AppTable.vue";
-import { teamsHeader } from "../../../../data/tableData.ts";
-import { teams } from "../../../../data/staticData.ts";
+import { rolesHeader } from "../../../../data/tableData.ts";
+import { roles } from "../../../../data/staticData.ts";
 import SettingsHeader from "../../../../components/ui/headers/SettingsHeader.vue";
 </script>
 
 <template>
-  <SettingsHeader title="Teams" name="teams" :length="teams.length" />
-  <AppTable :data="teams" :headers="teamsHeader">
+  <SettingsHeader title="Access roles" name="roles" :length="roles.length" />
+  <AppTable :data="roles" :headers="rolesHeader">
     <template #td_name="{ item }">
       <span class="text-mainBlue font-medium cursor-pointer">
         {{ item?.name }}
