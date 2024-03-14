@@ -1,6 +1,4 @@
 <script setup lang="ts">
-import { ref } from "vue";
-import AppTable from "../../../../components/tables/AppTable.vue";
 import { providersHeader } from "../../../../data/tableData.ts";
 import { providers } from "../../../../data/staticData.ts";
 import SettingsHeader from "../../../../components/ui/headers/SettingsHeader.vue";
@@ -37,7 +35,7 @@ import Button from "../../../../components/ui/buttons/Button.vue";
     </template>
     <template #td_status="{ item }">
       <span v-if="item?.status">Active</span>
-      <span v-else="item?.status" class="text-red-500">Inactive</span>
+      <span v-else class="text-red-500">Inactive</span>
     </template>
     <template #td_author="{ item }">
       <span class="text-mainBlue font-medium cursor-pointer">

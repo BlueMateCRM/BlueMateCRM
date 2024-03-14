@@ -1,6 +1,6 @@
 import { createRouter, createWebHistory } from "vue-router";
-import { userRoutes } from "./user";
-import { errorRoutes } from "./errors";
+import { userRoutes } from "./user.ts";
+import { errorRoutes } from "./errors.ts";
 import { signRoutes } from "./sign.ts";
 
 const router = createRouter({

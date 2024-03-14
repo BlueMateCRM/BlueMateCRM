@@ -1,5 +1,4 @@
 <script setup lang="ts">
-import { ref } from "vue";
 import AppTable from "../../../../components/tables/AppTable.vue";
 import { rolesHeader } from "../../../../data/tableData.ts";
 import { roles } from "../../../../data/staticData.ts";
@@ -19,11 +18,11 @@ import SettingsHeader from "../../../../components/ui/headers/SettingsHeader.vue
         <span class="mr-1">Total {{ item?.users?.length }}</span>
         <template v-if="item?.users?.length > 7">
           <span
-            v-for="(item, i) in item?.users?.slice(0, 7)"
+            v-for="(items, i) in item?.users?.slice(0, 7)"
             class="bg-lightBlue py-[2px] px-[6px] rounded text-textBlack mx-1"
             :key="i + 'EEWWVBG'"
           >
-            {{ item }}
+            {{ items }}
           </span>
           <span
             class="bg-lightBlue py-[2px] px-[6px] rounded text-textBlack mx-1"
@@ -33,11 +32,11 @@ import SettingsHeader from "../../../../components/ui/headers/SettingsHeader.vue
         </template>
         <template v-else>
           <span
-            v-for="(item, i) in item?.users?.slice(0, 7)"
+            v-for="(items, i) in item?.users?.slice(0, 7)"
             class="bg-lightBlue py-[2px] px-[6px] rounded text-textBlack mx-1"
             :key="i + 'EEWWVBG'"
           >
-            {{ item }}
+            {{ items }}
           </span>
         </template>
       </p>
@@ -45,7 +44,7 @@ import SettingsHeader from "../../../../components/ui/headers/SettingsHeader.vue
     </template>
     <template #td_status="{ item }">
       <span v-if="item?.status">Active</span>
-      <span v-else="item?.status" class="text-red-500">Inactive</span>
+      <span v-else class="text-red-500">Inactive</span>
     </template>
   </AppTable>
 </template>

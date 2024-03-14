@@ -2,18 +2,18 @@
 // import { ref } from "vue";
 const handleDrop = (event: DragEvent) => {
   event.preventDefault();
-  const file = event.dataTransfer.files[0];
-  if (file) {
-    console.log(file);
-  }
+  // const file = event.dataTransfer.files[0];
+  // if (file) {
+  //   console.log(file);
+  // }
 };
 
-const fileUpload = async (e) => {
-  const file = new FormData();
-  file.append("file", e.target.files[0]);
-  // await store.Files(file)
-  console.log();
-};
+// const fileUpload = async (e) => {
+//   const file = new FormData();
+//   file.append("file", e.target.files[0]);
+//   // await store.Files(file)
+//   console.log();
+// };
 </script>
 
 <template>
@@ -27,26 +27,28 @@ const fileUpload = async (e) => {
         />
         <hr class="border-t border-solid border-gray-300 w-full" />
       </div>
-      <div
-        class="flex items-center justify-center border-dashed border border-gray-600 bg-gray-200 p-4 text-center cursor-pointer rounded-md"
-        @dragover.prevent
-        @drop="handleDrop"
-      >
-        <div class="flex items-center gap-3">
-          <div>
-            <label
-              for="fileUpload"
-              class="bg-mainBlue text-white py-2 px-4 rounded-md cursor-pointer"
-              >Upload files</label
-            >
+      <div class="pb-3">
+        <div
+          class="flex items-center justify-center border-dashed border border-gray-600 bg-gray-200 p-6 cursor-pointer rounded-md"
+          @dragover.prevent
+          @drop="handleDrop"
+        >
+          <div class="flex items-center gap-3">
+            <div>
+              <label
+                for="fileUpload"
+                class="bg-mainBlue text-white py-2 px-4 rounded-md cursor-pointer"
+                >Upload files</label
+              >
+            </div>
+            <input
+              id="fileUpload"
+              type="file"
+              class="bg-mainBlue text-white py-2 px-4 rounded-md hidden"
+              />
+              <!-- @change="fileUpload" -->
+            <p class="text-gray-500">Or drag file here</p>
           </div>
-          <input
-            id="fileUpload"
-            type="file"
-            @change="fileUpload"
-            class="bg-mainBlue text-white py-2 px-4 rounded-md hidden"
-          />
-          <p class="text-gray-500">Or drag file here</p>
         </div>
       </div>
     </div>

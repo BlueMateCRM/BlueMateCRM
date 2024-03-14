@@ -3,9 +3,11 @@ import { ref, onMounted } from "vue";
 import "leaflet/dist/leaflet.css";
 import * as L from "leaflet";
 
-const initialMap = ref(null);
+const initialMap = ref<L.Map | null>(null);
 
 onMounted(() => {
+  if (!initialMap.value) return;
+
   initialMap.value = L.map("map", {
     zoomControl: true,
     zoom: 1,
@@ -14,16 +16,21 @@ onMounted(() => {
     markerZoomAnimation: true,
   }).setView([30.333909672793297, -81.6694444474959], 6);
 
-  L.tileLayer("https://tile.openstreetmap.org/{z}/{x}/{y}.png", {
+  const map = initialMap.value;
+
+  if (!map) return;
+
+  map.tileLayer("https://tile.openstreetmap.org/{z}/{x}/{y}.png", {
     maxZoom: 19,
     attribution:
       '&copy; <a href="http://www.openstreetmap.org/copyright">OpenStreetMap</a>',
-  }).addTo(initialMap.value);
+  }).addTo(map);
 
-  L.marker([30.305767062843998, -81.97960434651407]).addTo(initialMap.value);
-  L.marker([30.48174677280629, -83.4170443075498]).addTo(initialMap.value);
+  map.marker([30.305767062843998, -81.97960434651407]).addTo(map);
+  map.marker([30.48174677280629, -83.4170443075498]).addTo(map);
 });
 </script>
+
 
 <template>
   <div id="map" class="h-[300px] w-full rounded"></div>

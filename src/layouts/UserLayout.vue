@@ -7,7 +7,7 @@ import { useRoute } from "vue-router";
 import { status } from "../data/headerData.ts";
 
 const route = useRoute();
-const headerStatus = ref([]);
+const headerStatus = ref<string[]>([]);
 const mainPath = ref("");
 const initialIndex = ref(0);
 const isExist = ref(false);
@@ -16,11 +16,12 @@ const changeHeaderStatus = () => {
   const path = route.fullPath.split("/");
   const key = path[path?.length - 1];
   initialIndex.value = 0;
-  if (status[key]) {
-    headerStatus.value = status[key];
-  } else {
-    headerStatus.value = [key];
-  }
+  if (status[key as keyof typeof status]) {
+  headerStatus.value = status[key as keyof typeof status];
+} else {
+  headerStatus.value = [String(key)];
+}
+
 
   if (path.includes("settings")) {
     isExist.value = true;

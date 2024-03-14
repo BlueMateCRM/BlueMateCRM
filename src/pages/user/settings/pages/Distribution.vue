@@ -1,10 +1,10 @@
 <script setup lang="ts">
-import { ref } from "vue";
+// import { ref } from "vue";
 import AppTable from "../../../../components/tables/AppTable.vue";
 import { distributionHeader } from "../../../../data/tableData.ts";
 import { distribution } from "../../../../data/staticData.ts";
 import SettingsHeader from "../../../../components/ui/headers/SettingsHeader.vue";
-import Button from "../../../../components/ui/buttons/Button.vue";
+// import Button from "../../../../components/ui/buttons/Button.vue";
 </script>
 
 <template>

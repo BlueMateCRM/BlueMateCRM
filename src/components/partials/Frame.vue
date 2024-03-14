@@ -1,5 +1,5 @@
-<script setup>
-import { ref, defineComponent } from "vue";
+<script setup lang="ts">
+import { ref } from "vue";
 import { QuillEditor } from "@vueup/vue-quill";
 import BlotFormatter from "quill-blot-formatter";
 import Files from "../ui/Files.vue"
@@ -15,7 +15,7 @@ const modules = {
   name: "blotFormatter",
   module: BlotFormatter,
   options: {
-    upload: (file) => {
+    upload: (file: File) => {
       console.log(file);
     },
   },
@@ -49,7 +49,7 @@ const modules = {
         @click="content = 3"
       >
         <i class="bx bx-phone text-2xl mr-1"></i>
-        <p class="text-lg">Phone</p>
+        <p class="text-lg">SMS</p>
       </div>
       <div
         class="flex h-full items-center px-3 py-2 text-gray-800"

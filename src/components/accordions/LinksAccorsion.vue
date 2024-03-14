@@ -1,4 +1,4 @@
-<script setup>
+<script setup lang="ts">
 import { ref } from "vue";
 
 const props = defineProps({
@@ -13,7 +13,7 @@ const props = defineProps({
 });
 
 const open = ref(props.isOpen);
-const openAccordion = (e) => {
+const openAccordion = () => {
   open.value = !open.value;
 };
 </script>
