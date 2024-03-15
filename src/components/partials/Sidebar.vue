@@ -140,11 +140,11 @@
     <el-tooltip
       class="box-item"
       effect="dark"
-      content="other"
+      content="more settings"
       placement="right"
     >
       <router-link
-        to="/user/other"
+        to="/user/other/status_changes"
         class="flex w-12 h-12 items-center justify-center rounded-md mb-1"
       >
         <i class="bx bx-dots-horizontal-rounded text-xl text-white"></i>

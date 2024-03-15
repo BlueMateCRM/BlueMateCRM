@@ -153,3 +153,12 @@ export const shipmentHeader = [
   { title: "", value: "c" },
   { title: "", value: "d" },
 ];
+
+export const automationHeader = [
+  { title: "Name", value: "name" },
+  { title: "Email template", value: "email" },
+  { title: "sms template", value: "sms" },
+  { title: "steps", value: "steps" },
+  { title: "Delay", value: "delay" },
+  { title: "Status", value: "status" },
+];

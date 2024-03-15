@@ -117,8 +117,15 @@ export const userRoutes = {
     },
     {
       path: "other",
-      name: "user-others",
-      component: () => import("../pages/user/Other.vue"),
+      component: () => import("../pages/user/more_settings/index.vue"),
+      children: [
+        {
+          path: "status_changes",
+          name: "user-others-status",
+          component: () =>
+            import("../pages/user/more_settings/pages/StatusChange.vue"),
+        },
+      ],
     },
   ],
 };
