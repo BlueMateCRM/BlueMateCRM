@@ -75,11 +75,11 @@
     <el-tooltip
       class="box-item"
       effect="dark"
-      content="profile"
+      content="contact"
       placement="right"
     >
       <router-link
-        to="/user/profile"
+        to="/user/contact"
         class="flex w-12 h-12 items-center justify-center rounded-md mb-1"
       >
         <i class="bx bx-id-card text-xl text-white"></i>
@@ -88,11 +88,11 @@
     <el-tooltip
       class="box-item"
       effect="dark"
-      content="carriers"
+      content="partners"
       placement="right"
     >
       <router-link
-        to="/user/profile"
+        to="/user/partners"
         class="flex w-12 h-12 items-center justify-center rounded-md mb-1"
       >
         <img src="/partner.svg" alt="partner" />
@@ -108,7 +108,7 @@
         to="/user/insights"
         class="flex w-12 h-12 items-center justify-center rounded-md mb-1"
       >
-        <i class="bx bx-shape-circle text-xl text-white"></i>
+        <i class="bx bx-line-chart text-xl text-white"></i>
       </router-link>
     </el-tooltip>
     <el-tooltip
@@ -121,10 +121,10 @@
         to="/user/settings/users"
         class="flex w-12 h-12 items-center justify-center rounded-md mb-1"
       >
-        <i class="bx bx-line-chart text-xl text-white"></i>
+        <i class="bx bx-cog text-xl text-white"></i>
       </router-link>
     </el-tooltip>
-    <el-tooltip
+    <!-- <el-tooltip
       class="box-item"
       effect="dark"
       content="technique settings"
@@ -136,7 +136,7 @@
       >
         <i class="bx bx-cog text-xl text-white"></i>
       </router-link>
-    </el-tooltip>
+    </el-tooltip> -->
     <el-tooltip
       class="box-item"
       effect="dark"

@@ -1,7 +1,7 @@
 <script setup lang="ts">
 import { orderHeaders } from "../../data/tableData.ts";
 import { orders } from "../../data/staticData.ts";
-import AppTable from "./AppTable.vue";
+import AppTable from "./app/AppTable.vue";
 import { ref } from "vue";
 import InfoModal from "../modals/InfoModal.vue";
 import TableHeader from "../ui/headers/TableHeader.vue";
@@ -33,7 +33,7 @@ function getDataByNum(index: number | object) {
       :next="getDataByNum"
       :length="orders.length"
     />
-    <TableHeader title="order" />
+    <TableHeader title="quotes" />
     <AppTable :data="orders" :headers="orderHeaders">
       <template #td_id="{ item }">
         <span class="text-mainBlue cursor-pointer" @click="openModal(item)">

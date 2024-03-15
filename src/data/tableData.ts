@@ -36,6 +36,18 @@ export const tasksHeaders = [
   { title: "user", value: "user" },
 ];
 
+export const contactHeaders = [
+  { title: "customer", value: "customer" },
+  { title: "phone", value: "phone" },
+  { title: "email", value: "email" },
+  { title: "billing", value: "billing" },
+  { title: "completed", value: "completed" },
+  { title: "ongoing", value: "ongoing" },
+  { title: "status", value: "status" },
+  { title: "source", value: "source" },
+  { title: "added", value: "createdAt" },
+];
+
 export const usersHeader = [
   { title: "User name", value: "username" },
   { title: "first name", value: "firstname" },

@@ -28,9 +28,9 @@ export const userRoutes = {
       component: () => import("../pages/user/Tasks.vue"),
     },
     {
-      path: "profile",
-      name: "user-profile",
-      component: () => import("../pages/user/Profile.vue"),
+      path: "contact",
+      name: "user-contact",
+      component: () => import("../pages/user/Contact.vue"),
     },
     {
       path: "insights",
@@ -111,9 +111,9 @@ export const userRoutes = {
       ],
     },
     {
-      path: "technique",
-      name: "user-technique",
-      component: () => import("../pages/user/Technique.vue"),
+      path: "partners",
+      name: "user-partners",
+      component: () => import("../pages/user/Partners.vue"),
     },
     {
       path: "other",
