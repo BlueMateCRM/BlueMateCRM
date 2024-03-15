@@ -1,11 +1,13 @@
 <script setup lang="ts">
 import { ref } from "vue";
+import { useRoute } from "vue-router";
 import Frame from "../partials/Frame.vue";
 import ModalHeader from "../ui/headers/ModalHeader.vue";
 import AsideAccordion from "../accordions/AsideAccordion.vue";
 import AppAccordion from "../accordions/AppAccordion.vue";
 // import MainMap from "../partials/MainMap.vue";
 
+const route = useRoute();
 const props = defineProps({
   close: {
     type: Function,
@@ -101,7 +103,7 @@ function changeWidth() {
         :data="{ id: props.data?.id, user: props.data?.customer }"
       />
       <div class="modal-body flex w-full">
-        <!-- <pre>{{ props.data }}</pre> -->
+        <!-- <pre>{{ route.path }}</pre> -->
         <aside
           class="modal-aside pb-4 w-[420px] h-full overflow-y-auto border-r border-gray-300"
         >
@@ -123,7 +125,12 @@ function changeWidth() {
               </button>
             </template>
           </AsideAccordion>
-          <AsideAccordion title="Payment" :data="props.data" :isOpen="false">
+          <AsideAccordion
+            v-if="route.path !== '/user/leads'"
+            title="Payment"
+            :data="props.data"
+            :isOpen="false"
+          >
             <template #payment>
               <button
                 class="px-2 h-5 text-xs rounded border border-mainRed bg-mainRed text-white font-medium"
@@ -139,7 +146,12 @@ function changeWidth() {
               </button>
             </template>
           </AsideAccordion>
-          <AsideAccordion title="Date" :data="props.data" :isOpen="false" />
+          <AsideAccordion
+            v-if="route.path !== '/user/leads'"
+            title="Date"
+            :data="props.data"
+            :isOpen="false"
+          />
         </aside>
         <section class="modal-content h-auto overflow-auto bg-bglightGray p-4">
           <Frame />
