@@ -95,8 +95,8 @@
         to="/user/profile"
         class="flex w-12 h-12 items-center justify-center rounded-md mb-1"
       >
-    <img src="../../../public/partner.svg" alt="">
-    </router-link>
+        <img src="/partner.svg" alt="partner" />
+      </router-link>
     </el-tooltip>
     <el-tooltip
       class="box-item"
