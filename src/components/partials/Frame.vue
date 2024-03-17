@@ -1,7 +1,7 @@
 <script setup lang="ts">
 import { ref } from "vue";
-// import { QuillEditor } from "@vueup/vue-quill";
-// import BlotFormatter from "quill-blot-formatter";
+import { QuillEditor } from "@vueup/vue-quill";
+import BlotFormatter from "quill-blot-formatter";
 import Files from "../ui/Files.vue";
 import Tasks from "../ui/Tasks.vue";
 import Phone from "../ui/Phone.vue";
@@ -10,16 +10,16 @@ import Contact from "../ui/Contract.vue";
 import Payment from "../ui/Payment.vue";
 import "@vueup/vue-quill/dist/vue-quill.snow.css";
 let content = ref(1);
-// var toolbarOptions = ["bold", "italic", "underline", "link", "ql-image", "clean"];
-// const modules = {
-//   name: "blotFormatter",
-//   module: BlotFormatter,
-//   options: {
-//     upload: async (file: File) => {
-//       console.log(file);
-//     },
-//   },
-// };
+var toolbarOptions = ["bold", "italic", "underline", "link", "ql-image", "clean"];
+const modules = {
+  name: "blotFormatter",
+  module: BlotFormatter,
+  options: {
+    upload: async (file: File) => {
+      console.log(file);
+    },
+  },
+};
 
 import { useRoute } from "vue-router";
 const route = useRoute();
@@ -94,7 +94,7 @@ const route = useRoute();
     <div class="w-full border bg-white rounded-b-md border-gray-400">
       <!-- Notes -->      
       <div v-show="content == 1" class="bg-[#FFF4CC] h-full overflow-y-auto">
-        <!-- <QuillEditor :modules="modules" :toolbar="toolbarOptions" /> -->
+        <QuillEditor :modules="modules" :toolbar="toolbarOptions" />
       </div>
       <!-- Tasks -->
       <div v-show="content == 2" class="h-full">
