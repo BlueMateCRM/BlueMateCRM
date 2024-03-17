@@ -6,6 +6,7 @@ import ModalHeader from "../ui/headers/ModalHeader.vue";
 import AsideAccordion from "../accordions/AsideAccordion.vue";
 import AppAccordion from "../accordions/AppAccordion.vue";
 import MainMap from "../partials/MainMap.vue";
+import { infoModal } from "../../data/staticData.ts";
 
 const route = useRoute();
 const props = defineProps({
@@ -107,28 +108,39 @@ function changeWidth() {
         <aside
           class="modal-aside pb-4 w-[420px] h-full overflow-y-auto border-r border-gray-300"
         >
-          <AsideAccordion title="Details" :data="props.data" :isOpen="true">
-            <template #operation>
-              <button class="w-6 h-5 rounded border border-gray-200 bg-white">
-                <i
-                  class="bx bx-dots-horizontal-rounded text-sm text-textBlack"
-                ></i>
-              </button>
-            </template>
-          </AsideAccordion>
-          <AsideAccordion title="Person" :data="props.data" :isOpen="false">
-            <template #operation>
-              <button class="w-6 h-5 rounded border border-gray-200 bg-white">
-                <i
-                  class="bx bx-dots-horizontal-rounded text-sm text-textBlack"
-                ></i>
-              </button>
-            </template>
-          </AsideAccordion>
+          <!-- detail -->
           <AsideAccordion
-            v-if="route.path !== '/user/leads'"
+            title="Details"
+            :data="infoModal.details"
+            :isOpen="true"
+          >
+            <template #operation>
+              <button class="w-6 h-5 rounded border border-gray-200 bg-white">
+                <i
+                  class="bx bx-dots-horizontal-rounded text-sm text-textBlack"
+                ></i>
+              </button>
+            </template>
+          </AsideAccordion>
+          <!-- person -->
+          <AsideAccordion
+            title="Person"
+            :data="infoModal.person"
+            :isOpen="false"
+          >
+            <template #operation>
+              <button class="w-6 h-5 rounded border border-gray-200 bg-white">
+                <i
+                  class="bx bx-dots-horizontal-rounded text-sm text-textBlack"
+                ></i>
+              </button>
+            </template>
+          </AsideAccordion>
+          <!-- payment -->
+          <AsideAccordion
+            v-if="route.path !== '/user/leads' && route.path !== '/user/quotes'"
             title="Payment"
-            :data="props.data"
+            :data="infoModal.payment"
             :isOpen="false"
           >
             <template #payment>
@@ -146,12 +158,46 @@ function changeWidth() {
               </button>
             </template>
           </AsideAccordion>
+          <!-- date -->
           <AsideAccordion
-            v-if="route.path !== '/user/leads'"
+            v-if="route.path !== '/user/leads' && route.path !== '/user/quotes'"
             title="Date"
-            :data="props.data"
+            :data="infoModal.date"
             :isOpen="false"
           />
+          <!-- carrier -->
+          <AsideAccordion
+            v-if="route.path !== '/user/leads' && route.path !== '/user/quotes'"
+            title="Carrier company info"
+            :data="infoModal.carrier"
+            :isOpen="false"
+          />
+          <!-- Changes time -->
+          <ul
+            v-if="route.path !== '/user/leads'"
+            class="w-full border-t border-gray-300 pt-2 mt-4"
+          >
+            <li class="flex p-2">
+              <b class="w-2/5 text-darkBlue">Last time edited</b>
+              <span class="w-1/2">March 15, 2024 09:01 AM</span>
+            </li>
+            <li class="flex p-2">
+              <b class="w-2/5 text-darkBlue">Re-assigned</b>
+              <span class="w-1/2">March 15, 2024 09:01 AM</span>
+            </li>
+            <li class="flex p-2">
+              <b class="w-2/5 text-darkBlue">Converted</b>
+              <span class="w-1/2">March 15, 2024 09:01 AM</span>
+            </li>
+            <li class="flex p-2">
+              <b class="w-2/5 text-darkBlue">Quoted time</b>
+              <span class="w-1/2">March 15, 2024 09:01 AM</span>
+            </li>
+            <li class="flex p-2">
+              <b class="w-2/5 text-darkBlue">Created time</b>
+              <span class="w-1/2">March 15, 2024 09:01 AM</span>
+            </li>
+          </ul>
         </aside>
         <section class="modal-content h-auto overflow-auto bg-bglightGray p-4">
           <Frame />

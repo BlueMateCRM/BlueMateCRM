@@ -963,3 +963,56 @@ export const automation = [
     status: false,
   },
 ];
+
+export const infoModal = {
+  details: {
+    name: "2022 Toyota Camry",
+    condition: "Runs and drives",
+    type: "Car",
+    pickup: "Queens, NY, 11101",
+    delivery: "San Diego, CA 78594",
+    location: "Residential to residential",
+    trailer: "Open",
+    source: "Website",
+    tital: "$1,200",
+  },
+  person: {
+    name: "John Smith",
+    email: "yourname@gmial.com",
+    phone: "(999) 999-9999",
+  },
+  payment: {
+    total: "$1,200",
+    reservetion: "$200",
+    paid: "$0",
+    carrierPay: "$1000",
+    cddToCarrier: "$1000",
+    paidToCarrier: "$0",
+  },
+  date: {
+    shipDate: "March 13, 2024",
+    puDate: "March 13, 2024",
+    delDate: "March 13, 2024",
+    dispatch: "March 13, 2024 09:01 AM",
+    pickup: "March 13, 2024 09:01 AM",
+    delivery: "March 13, 2024 09:01 AM",
+  },
+  carrier: {
+    name: "Direct Motors Inc",
+    location: "5522 Claredon Hills Rd Clarendon Hills IL 60514",
+    phone1: "(999) 999-9999",
+    phone2: "(999) 999-9999",
+    email: "youremail@gmail.com",
+    ccdMethod1: "Cash/Certified fund",
+    paymentTerm: "Immediately",
+    termBegins: "After delivery",
+    ccdMethod2: "Cash/Certified fund",
+  },
+  lastChanges: {
+    lastEdited: "March 15, 2024 09:01 AM",
+    lastAssigned: "March 15, 2024 09:01 AM",
+    lastConverted: "March 15, 2024 09:01 AM",
+    lastQuoted: "March 15, 2024 09:01 AM",
+    createdAt: "March 15, 2024 09:01 AM",
+  },
+};
