@@ -38,7 +38,7 @@ onMounted(async () => {
       <div
         v-for="(item, index) in props.status"
         class="font-semibold py-4 px-3 capitalize"
-        :class="{ price: props.i == index }"
+        :class="{ price: props.i == index && props.status?.length > 1 }"
         @click="props.active(index)"
         :key="index + 'AAVVDD'"
       >

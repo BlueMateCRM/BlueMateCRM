@@ -1,13 +1,25 @@
 <script setup lang="ts">
 import { ref } from "vue";
-import Files from "../ui/Files.vue"
-import Tasks from "../ui/Tasks.vue"
-import Notes from "../ui/Notes.vue"
-import Phone from "../ui/Phone.vue"
-import Email from "../ui/Email.vue"
-import Contact from "../ui/Contract.vue"
-import Payment from "../ui/Payment.vue"
+// import { QuillEditor } from "@vueup/vue-quill";
+// import BlotFormatter from "quill-blot-formatter";
+import Files from "../ui/Files.vue";
+import Tasks from "../ui/Tasks.vue";
+import Phone from "../ui/Phone.vue";
+import Email from "../ui/Email.vue";
+import Contact from "../ui/Contract.vue";
+import Payment from "../ui/Payment.vue";
+import "@vueup/vue-quill/dist/vue-quill.snow.css";
 let content = ref(1);
+// var toolbarOptions = ["bold", "italic", "underline", "link", "ql-image", "clean"];
+// const modules = {
+//   name: "blotFormatter",
+//   module: BlotFormatter,
+//   options: {
+//     upload: async (file: File) => {
+//       console.log(file);
+//     },
+//   },
+// };
 
 import { useRoute } from "vue-router";
 const route = useRoute();
@@ -73,8 +85,8 @@ const route = useRoute();
         :class="{ price: content == 7 }"
         @click="content = 7"
       >
-      <i class='bx bxs-credit-card text-2xl mr-1'></i>
-      <p class="text-lg">Payment</p>
+        <i class="bx bxs-credit-card text-2xl mr-1"></i>
+        <p class="text-lg">Payment</p>
       </div>
     </nav>
 
@@ -82,32 +94,32 @@ const route = useRoute();
     <div class="w-full border bg-white rounded-b-md border-gray-400">
       <!-- Notes -->      
       <div v-show="content == 1" class="bg-[#FFF4CC] h-full overflow-y-auto">
-        <Notes/>
+        <!-- <QuillEditor :modules="modules" :toolbar="toolbarOptions" /> -->
       </div>
       <!-- Tasks -->
       <div v-show="content == 2" class="h-full">
-        <Tasks/>
+        <Tasks />
       </div>
       <!-- Phone -->
       <div v-show="content == 3" class="h-full">
-        <Phone/>
+        <Phone />
       </div>
       <!-- Email -->
       <div v-show="content == 4" class="h-full">
         <!-- <Email/> -->
-        <Email/>
+        <Email />
       </div>
       <!-- Files -->
       <div v-show="content == 5" class="h-full">
-        <Files/>
+        <Files />
       </div>
       <!-- Contract -->
       <div v-show="content == 6" class="h-full">
-        <Contact/>
+        <Contact />
       </div>
       <!-- Payment -->
       <div v-show="content == 7" class="h-full">
-        <Payment/>
+        <Payment />
       </div>
     </div>
   </div>

@@ -1,39 +1,16 @@
-<script setup lang="ts">
-import { ref, onMounted } from "vue";
-import "leaflet/dist/leaflet.css";
-import * as L from "leaflet";
-
-const initialMap = ref<L.Map | null>(null);
-
-onMounted(() => {
-  if (!initialMap.value) return;
-
-  initialMap.value = L.map("map", {
-    zoomControl: true,
-    zoom: 1,
-    zoomAnimation: false,
-    fadeAnimation: true,
-    markerZoomAnimation: true,
-  }).setView([30.333909672793297, -81.6694444474959], 6);
-
-  const map = initialMap.value;
-
-  if (!map) return;
-
-  map.tileLayer("https://tile.openstreetmap.org/{z}/{x}/{y}.png", {
-    maxZoom: 19,
-    attribution:
-      '&copy; <a href="http://www.openstreetmap.org/copyright">OpenStreetMap</a>',
-  }).addTo(map);
-
-  map.marker([30.305767062843998, -81.97960434651407]).addTo(map);
-  map.marker([30.48174677280629, -83.4170443075498]).addTo(map);
-});
-</script>
-
+<script setup lang="ts"></script>
 
 <template>
-  <div id="map" class="h-[300px] w-full rounded"></div>
+  <div class="h-[300px] w-full rounded overflow-hidden">
+    <iframe
+      src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d440730.03321172483!2d-82.01276720139975!3d30.34516921437771!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x88e5b716f1ceafeb%3A0xc4cd7d3896fcc7e2!2sJeksonvill%2C%20Florida%2C%20Amerika%20Qo%E2%80%98shma%20Shtatlari!5e0!3m2!1suz!2s!4v1710663286379!5m2!1suz!2s"
+      class="w-full h-full"
+      style="border: 0"
+      :allowfullscreen="true"
+      loading="lazy"
+      referrerpolicy="no-referrer-when-downgrade"
+    ></iframe>
+  </div>
 </template>
 
 <style scoped></style>

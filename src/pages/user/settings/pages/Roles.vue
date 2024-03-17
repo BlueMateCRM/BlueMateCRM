@@ -1,5 +1,4 @@
 <script setup lang="ts">
-import AppTable from "../../../../components/tables/AppTable.vue";
 import { rolesHeader } from "../../../../data/tableData.ts";
 import { roles } from "../../../../data/staticData.ts";
 import SettingsHeader from "../../../../components/ui/headers/SettingsHeader.vue";

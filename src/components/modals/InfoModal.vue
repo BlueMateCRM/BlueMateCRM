@@ -1,11 +1,14 @@
 <script setup lang="ts">
 import { ref } from "vue";
+import { useRoute } from "vue-router";
 import Frame from "../partials/Frame.vue";
 import ModalHeader from "../ui/headers/ModalHeader.vue";
 import AsideAccordion from "../accordions/AsideAccordion.vue";
 import AppAccordion from "../accordions/AppAccordion.vue";
-// import MainMap from "../partials/MainMap.vue";
+import MainMap from "../partials/MainMap.vue";
+import { infoModal } from "../../data/staticData.ts";
 
+const route = useRoute();
 const props = defineProps({
   close: {
     type: Function,
@@ -101,11 +104,16 @@ function changeWidth() {
         :data="{ id: props.data?.id, user: props.data?.customer }"
       />
       <div class="modal-body flex w-full">
-        <!-- <pre>{{ props.data }}</pre> -->
+        <!-- <pre>{{ route.path }}</pre> -->
         <aside
           class="modal-aside pb-4 w-[420px] h-full overflow-y-auto border-r border-gray-300"
         >
-          <AsideAccordion title="Details" :data="props.data" :isOpen="true">
+          <!-- detail -->
+          <AsideAccordion
+            title="Details"
+            :data="infoModal.details"
+            :isOpen="true"
+          >
             <template #operation>
               <button class="w-6 h-5 rounded border border-gray-200 bg-white">
                 <i
@@ -114,7 +122,12 @@ function changeWidth() {
               </button>
             </template>
           </AsideAccordion>
-          <AsideAccordion title="Person" :data="props.data" :isOpen="false">
+          <!-- person -->
+          <AsideAccordion
+            title="Person"
+            :data="infoModal.person"
+            :isOpen="false"
+          >
             <template #operation>
               <button class="w-6 h-5 rounded border border-gray-200 bg-white">
                 <i
@@ -123,7 +136,13 @@ function changeWidth() {
               </button>
             </template>
           </AsideAccordion>
-          <AsideAccordion title="Payment" :data="props.data" :isOpen="false">
+          <!-- payment -->
+          <AsideAccordion
+            v-if="route.path !== '/user/leads' && route.path !== '/user/quotes'"
+            title="Payment"
+            :data="infoModal.payment"
+            :isOpen="false"
+          >
             <template #payment>
               <button
                 class="px-2 h-5 text-xs rounded border border-mainRed bg-mainRed text-white font-medium"
@@ -139,12 +158,51 @@ function changeWidth() {
               </button>
             </template>
           </AsideAccordion>
-          <AsideAccordion title="Date" :data="props.data" :isOpen="false" />
+          <!-- date -->
+          <AsideAccordion
+            v-if="route.path !== '/user/leads' && route.path !== '/user/quotes'"
+            title="Date"
+            :data="infoModal.date"
+            :isOpen="false"
+          />
+          <!-- carrier -->
+          <AsideAccordion
+            v-if="route.path !== '/user/leads' && route.path !== '/user/quotes'"
+            title="Carrier company info"
+            :data="infoModal.carrier"
+            :isOpen="false"
+          />
+          <!-- Changes time -->
+          <ul
+            v-if="route.path !== '/user/leads'"
+            class="w-full border-t border-gray-300 pt-2 mt-4"
+          >
+            <li class="flex p-2">
+              <b class="w-2/5 text-darkBlue">Last time edited</b>
+              <span class="w-1/2">March 15, 2024 09:01 AM</span>
+            </li>
+            <li class="flex p-2">
+              <b class="w-2/5 text-darkBlue">Re-assigned</b>
+              <span class="w-1/2">March 15, 2024 09:01 AM</span>
+            </li>
+            <li class="flex p-2">
+              <b class="w-2/5 text-darkBlue">Converted</b>
+              <span class="w-1/2">March 15, 2024 09:01 AM</span>
+            </li>
+            <li class="flex p-2">
+              <b class="w-2/5 text-darkBlue">Quoted time</b>
+              <span class="w-1/2">March 15, 2024 09:01 AM</span>
+            </li>
+            <li class="flex p-2">
+              <b class="w-2/5 text-darkBlue">Created time</b>
+              <span class="w-1/2">March 15, 2024 09:01 AM</span>
+            </li>
+          </ul>
         </aside>
         <section class="modal-content h-auto overflow-auto bg-bglightGray p-4">
           <Frame />
           <AppAccordion title="Map" :isOpen="true" class="mt-5">
-            <!-- <MainMap /> -->
+            <MainMap />
           </AppAccordion>
         </section>
       </div>

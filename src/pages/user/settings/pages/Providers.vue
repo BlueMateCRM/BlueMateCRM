@@ -2,7 +2,6 @@
 import { providersHeader } from "../../../../data/tableData.ts";
 import { providers } from "../../../../data/staticData.ts";
 import SettingsHeader from "../../../../components/ui/headers/SettingsHeader.vue";
-import Button from "../../../../components/ui/buttons/Button.vue";
 </script>
 
 <template>

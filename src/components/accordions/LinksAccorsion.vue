@@ -22,7 +22,7 @@ const openAccordion = () => {
   <div v-if="props.data?.links">
     <!-- title   -->
     <div
-      class="p-[10px] flex items-center text-textBlack mb-2 cursor-pointer"
+      class="p-[10px] flex items-center text-textBlack cursor-pointer"
       @click="openAccordion"
     >
       <i
@@ -38,7 +38,7 @@ const openAccordion = () => {
     >
       <router-link
         :to="item.url"
-        class="py-[10px] pl-9 mb-2 text-textBlack font-medium hover:bg-lightBlue duration-200 border-t border-b border-gray-200"
+        class="py-[10px] pl-9 text-textBlack font-medium hover:bg-lightBlue duration-200"
         v-for="(item, index) in props.data.links"
         :key="index + 'AAALL'"
       >
@@ -50,7 +50,7 @@ const openAccordion = () => {
     <!-- link -->
     <router-link
       :to="props.data.url"
-      class="py-[10px] pl-9 w-full block mb-2 text-textBlack font-medium"
+      class="py-[10px] pl-9 w-full block text-textBlack font-medium"
     >
       {{ props.data.title }}
     </router-link>

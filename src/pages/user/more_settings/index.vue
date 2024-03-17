@@ -1,11 +1,11 @@
 <script setup lang="ts">
 import SettingsSidebar from "../../../components/partials/SettingsSidebar.vue";
-import { settingsData } from "../../../data/settingsDatta.ts";
+import { moreSettingsData } from "../../../data/settingsDatta.ts";
 </script>
 
 <template>
   <main class="settings flex">
-    <SettingsSidebar :routes="settingsData" class="w-[256px] h-full" />
+    <SettingsSidebar :routes="moreSettingsData" class="w-[256px] h-full" />
     <div
       class="settings__content content h-full py-[10px] px-4 bg-bglightGray overflow-x-hidden overflow-y-auto"
     >

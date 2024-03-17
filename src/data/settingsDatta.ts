@@ -1,4 +1,4 @@
-export const asideData = [
+export const settingsData = [
   {
     title: "User Management",
     links: [
@@ -68,6 +68,18 @@ export const asideData = [
       {
         name: "Templates",
         url: "/user/settings/templates",
+      },
+    ],
+  },
+];
+
+export const moreSettingsData = [
+  {
+    title: "Automation",
+    links: [
+      {
+        name: "Status automation",
+        url: "/user/other/status_changes",
       },
     ],
   },

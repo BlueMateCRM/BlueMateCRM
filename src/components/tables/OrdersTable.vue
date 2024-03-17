@@ -1,7 +1,6 @@
 <script setup lang="ts">
 import { orderHeaders } from "../../data/tableData.ts";
 import { orders } from "../../data/staticData.ts";
-import AppTable from "./AppTable.vue";
 import { ref } from "vue";
 import InfoModal from "../modals/InfoModal.vue";
 import TableHeader from "../ui/headers/TableHeader.vue";
@@ -13,7 +12,7 @@ function hideModal() {
   showModal.value = false;
 }
 function openModal(data: any) {
-  singleData.value = data;
+  singleData.value = { id: data?.id };
   showModal.value = true;
 }
 

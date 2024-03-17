@@ -1,6 +1,8 @@
 <script setup lang="ts">
-import { asideData } from "../../data/settingsDatta.ts";
 import LinksAccordion from "../../components/accordions/LinksAccorsion.vue";
+const props = defineProps({
+  routes: {} as () => any,
+});
 </script>
 
 <template>
@@ -8,7 +10,7 @@ import LinksAccordion from "../../components/accordions/LinksAccorsion.vue";
     class="settings-aside py-[10px] border-r border-gray-300 bg-white overflow-x-hidden overflow-y-auto"
   >
     <LinksAccordion
-      v-for="(item, index) in asideData"
+      v-for="(item, index) in props.routes"
       :data="item"
       :key="index + 'KKMMSS'"
       :isOpen="index === 0 ? true : false"

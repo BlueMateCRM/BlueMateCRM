@@ -1,6 +1,6 @@
 <script lang="ts" setup>
 import { ref } from "vue";
-import CalendarRight from "./Calendar.vue";
+// import Calendar from "./Calendar.vue";
 // import { Calendar, Search } from "@element-plus/icons-vue";
 // input
 const input1 = ref("");
@@ -120,11 +120,10 @@ const options = [
     </div>
     <!-- Right Calendar -->
     <div class="w-[30%]">
-      <CalendarRight />
+      <!-- <Calendar /> -->
     </div>
   </div>
 </template>
-
 
 <style scoped>
 .border-blue-500 {

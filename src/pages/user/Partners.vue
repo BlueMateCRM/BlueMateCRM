@@ -4,7 +4,7 @@ import SoonAdded from "../../components/ui/errors/SoonAdded.vue";
 
 <template>
   <main>
-    <SoonAdded title="Profile page" />
+    <SoonAdded title="Partners" />
   </main>
 </template>
 

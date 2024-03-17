@@ -36,6 +36,18 @@ export const tasksHeaders = [
   { title: "user", value: "user" },
 ];
 
+export const contactHeaders = [
+  { title: "customer", value: "customer" },
+  { title: "phone", value: "phone" },
+  { title: "email", value: "email" },
+  { title: "billing", value: "billing" },
+  { title: "completed", value: "completed" },
+  { title: "ongoing", value: "ongoing" },
+  { title: "status", value: "status" },
+  { title: "source", value: "source" },
+  { title: "added", value: "createdAt" },
+];
+
 export const usersHeader = [
   { title: "User name", value: "username" },
   { title: "first name", value: "firstname" },
@@ -140,4 +152,13 @@ export const shipmentHeader = [
   { title: "", value: "b" },
   { title: "", value: "c" },
   { title: "", value: "d" },
+];
+
+export const automationHeader = [
+  { title: "Name", value: "name" },
+  { title: "Email template", value: "email" },
+  { title: "sms template", value: "sms" },
+  { title: "steps", value: "steps" },
+  { title: "Delay", value: "delay" },
+  { title: "Status", value: "status" },
 ];

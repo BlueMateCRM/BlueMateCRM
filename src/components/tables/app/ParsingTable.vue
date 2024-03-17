@@ -1,49 +1,32 @@
 <script setup lang="ts">
-import { ref } from "vue";
-import Checkbox from "../ui/form_elements/Checkbox.vue";
-
 const props = defineProps({
-  headers: {
-    type: Array,
+  headers: {} as () => any,
+  data: {} as () => any,
+  title: {
+    type: String,
     required: true,
   },
-  data: {
-    type: Array,
-    required: true,
-  },
-  notMustCheck: Boolean,
 });
-
-const isChecked = ref<boolean>(false);
-function checkAll() {
-  isChecked.value = !isChecked.value;
-}
 </script>
 
 <template>
-  <div class="relative overflow-x-auto shadow-md sm:rounded-lg w-full">
+  <div class="relative overflow-x-auto shadow-md sm:rounded-lg w-full mb-5">
+    <div
+      class="text-center bg-lightBlue text-darkBlue capitalize font-bold py-2"
+    >
+      {{ props.title }}
+    </div>
     <table class="min-w-full text-sm text-left text-gray-500">
       <!-- header -->
-      <thead class="text-sm text-gray-700 bg-[#E2E8F0]">
-        <tr>
-          <th
-            v-if="!props.notMustCheck"
-            scope="col"
-            class="px-3 capitalize font-semibold"
-          >
-            <Checkbox
-              :checked="isChecked"
-              :checkAll="checkAll"
-              :isBold="true"
-            />
-          </th>
+      <thead class="text-sm text-textBlack bg-white">
+        <tr class="border-b">
           <th
             v-for="(item, index) in props.headers"
             scope="col"
             class="px-3 py-3 capitalize font-semibold"
             :key="index + 'CCMMB'"
           >
-            {{ item?.title }}
+            {{ item?.title ? "{ " + item?.title + " }" : "" }}
           </th>
         </tr>
       </thead>
@@ -52,12 +35,9 @@ function checkAll() {
       <tbody>
         <tr
           v-for="(item, dataIndex) in props.data"
-          class="bg-white border-b hover:bg-gray-100"
+          class="bg-white border-b"
           :key="item.id + 'JJDF'"
         >
-          <td v-if="!props.notMustCheck" class="px-3">
-            <Checkbox :checked="isChecked" :isBold="false" />
-          </td>
           <td
             v-for="(td, tdIndex) in props.headers"
             class="px-3 py-[9.5px] text-[15px]"
