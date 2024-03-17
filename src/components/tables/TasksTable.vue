@@ -12,7 +12,7 @@ function hideModal() {
   showModal.value = false;
 }
 function openModal(data: any) {
-  singleData.value = data;
+  singleData.value = { id: data?.id };
   showModal.value = true;
 }
 
