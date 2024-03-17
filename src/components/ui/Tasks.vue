@@ -45,47 +45,28 @@ const options = [
     <div class="w-[70%] flex-col px-6 py-2 space-y-3">
       <!-- Input Call -->
       <div class="w-full bg-green-200">
-        <el-input
-          v-model="input1"
-          placeholder="Call"
-          class="w-50"
-          size="large"
-        />
+        <el-input v-model="input1" placeholder="Call" class="w-50" size="large" />
       </div>
       <!-- Nav -->
       <div class="">
-        <nav
-          class="flex items-center w-[394px] h-8 border rounded-lg border-gray-400 cursor-pointer bg-white"
-        >
-          <div
-            class="flex h-full items-center px-3 py-2 text-gray-800"
-            :class="{ 'border-blue-500': content === 1 }"
-            @click="content = 1"
-          >
+        <nav class="flex items-center w-[394px] h-8 border rounded-lg border-gray-400 cursor-pointer bg-white">
+          <div class="flex h-full items-center px-3 py-2 text-gray-800" :class="{ 'border-blue-500': content === 1 }"
+            @click="content = 1">
             <i class="bx bx-phone text-xl mr-1"></i>
             <p class="text-lg">Call</p>
           </div>
-          <div
-            class="flex h-full items-center px-3 py-2 text-gray-800 border"
-            :class="{ 'border-blue-500': content === 2 }"
-            @click="content = 2"
-          >
+          <div class="flex h-full items-center px-3 py-2 text-gray-800 border"
+            :class="{ 'border-blue-500': content === 2 }" @click="content = 2">
             <i class="bx bx-envelope text-xl mr-1"></i>
             <p class="text-lg">Email</p>
           </div>
-          <div
-            class="flex h-full items-center px-3 py-2 text-gray-800 border"
-            :class="{ 'border-blue-500': content === 3 }"
-            @click="content = 3"
-          >
+          <div class="flex h-full items-center px-3 py-2 text-gray-800 border"
+            :class="{ 'border-blue-500': content === 3 }" @click="content = 3">
             <i class="bx bx-calendar text-xl mr-1"></i>
             <p class="text-lg">Tasks</p>
           </div>
-          <div
-            class="flex h-full items-center px-3 py-2 text-gray-800"
-            :class="{ 'border-blue-500': content === 4 }"
-            @click="content = 4"
-          >
+          <div class="flex h-full items-center px-3 py-2 text-gray-800" :class="{ 'border-blue-500': content === 4 }"
+            @click="content = 4">
             <i class="bx bx-calendar text-xl mr-1"></i>
             <p class="text-lg">Deadline</p>
           </div>
@@ -93,102 +74,47 @@ const options = [
       </div>
       <!-- date row -->
       <div class="space-x-2">
-        <el-date-picker
-          v-model="date1"
-          placeholder="2024-07-12"
-          style="width: 140px"
-        />
-        <el-time-picker
-          v-model="time1"
-          placeholder="10:00 AM"
-          format="hh:mm:ss A"
-          value-format="hh:mm:ss A"
-          style="width: 130px"
-        />
+        <el-date-picker v-model="date1" placeholder="2024-07-12" style="width: 140px" />
+        <el-time-picker v-model="time1" placeholder="10:00 AM" format="hh:mm:ss A" value-format="hh:mm:ss A"
+          style="width: 130px" />
 
-        <el-time-picker
-          v-model="time2"
-          placeholder="10:00 AM"
-          format="hh:mm:ss A"
-          value-format="hh:mm:ss A"
-          style="width: 130px"
-        />
-        <el-date-picker
-          v-model="date2"
-          placeholder="2024-07-12"
-          style="width: 140px"
-        />
+        <el-time-picker v-model="time2" placeholder="10:00 AM" format="hh:mm:ss A" value-format="hh:mm:ss A"
+          style="width: 130px" />
+        <el-date-picker v-model="date2" placeholder="2024-07-12" style="width: 140px" />
       </div>
       <!-- select row -->
       <div>
-        <el-select
-          v-model="select1"
-          clearable
-          placeholder="Select"
-          style="width: 140px"
-        >
-          <el-option
-            v-for="item in options"
-            :key="item.value"
-            :label="item.label"
-            :value="item.value"
-          />
+        <el-select v-model="select1" clearable placeholder="Select" style="width: 140px">
+          <el-option v-for="item in options" :key="item.value" :label="item.label" :value="item.value" />
         </el-select>
       </div>
       <!-- select row -->
       <div>
-        <el-select
-          v-model="select2"
-          clearable
-          placeholder="Select"
-          style="width: 140px"
-        >
-          <el-option
-            v-for="item in options"
-            :key="item.value"
-            :label="item.label"
-            :value="item.value"
-          />
+        <el-select v-model="select2" clearable placeholder="Select" style="width: 140px">
+          <el-option v-for="item in options" :key="item.value" :label="item.label" :value="item.value" />
         </el-select>
       </div>
       <div>
-        <el-input
-          v-model="textarea"
-          style="width: 360px; background-color: burlywood;"
-          :rows="2"
-          type="textarea"
-        />
+        <el-input v-model="textarea" style="width: 360px; background-color: burlywood;" :rows="2" type="textarea" />
       </div>
       <div class="flex-coll space-y-3">
         <div>
-          <el-select
-            v-model="select3"
-            clearable
-            placeholder="Select"
-            
-          >
-            <el-option
-              v-for="item in options"
-              :key="item.value"
-              :label="item.label"
-              :value="item.value"
-            />
+          <el-select v-model="select3" clearable placeholder="Select">
+            <el-option v-for="item in options" :key="item.value" :label="item.label" :value="item.value" />
           </el-select>
         </div>
         <div>
-          <el-select
-            v-model="select3"
-            clearable
-            placeholder="Select"
-            
-          >
-            <el-option
-              v-for="item in options"
-              :key="item.value"
-              :label="item.label"
-              :value="item.value"
-            />
+          <el-select v-model="select3" clearable placeholder="Select">
+            <el-option v-for="item in options" :key="item.value" :label="item.label" :value="item.value" />
           </el-select>
+        </div>
+        <div class="flex justify-end space-x-2 px-4 py-2">
+          <Button class="font-semibold text-gray-700 border-bleck bg-hoverGray  px-3 text-sm rounded">
+            Cancel
+          </Button>
+          <Button class="font-semibold text-white bg-mainBlue px-3 text-sm rounded">
+            Save
+          </Button>
         </div>
       </div>
     </div>
@@ -205,6 +131,7 @@ const options = [
   border: 1px solid #0087ff;
   border-radius: 5px;
 }
+
 .border-blue-500 p {
   color: #0087ff;
 }
