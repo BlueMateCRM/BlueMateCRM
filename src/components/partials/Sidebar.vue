@@ -124,19 +124,6 @@
         <i class="bx bx-cog text-xl text-white"></i>
       </router-link>
     </el-tooltip>
-    <!-- <el-tooltip
-      class="box-item"
-      effect="dark"
-      content="technique settings"
-      placement="right"
-    >
-      <router-link
-        to="/user/technique"
-        class="flex w-12 h-12 items-center justify-center rounded-md mb-1"
-      >
-        <i class="bx bx-cog text-xl text-white"></i>
-      </router-link>
-    </el-tooltip> -->
     <el-tooltip
       class="box-item"
       effect="dark"

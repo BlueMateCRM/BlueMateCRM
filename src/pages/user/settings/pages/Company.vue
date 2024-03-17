@@ -1,6 +1,5 @@
 <script setup lang="ts">
 // import { ref } from "vue";
-import AppTable from "../../../../components/tables/app/AppTable.vue";
 import { companyHeader } from "../../../../data/tableData.ts";
 import { company } from "../../../../data/staticData.ts";
 </script>

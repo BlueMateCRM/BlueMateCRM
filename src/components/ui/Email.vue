@@ -1,21 +1,9 @@
+<script setup lang="ts"></script>
+
 <template>
-    <div>
-        <p>Email com</p>
-    </div>
+  <div>
+    <p>Email com</p>
+  </div>
 </template>
 
-<script lang="ts">
-import { defineComponent } from 'vue'
-
-export default defineComponent({
-    setup () {
-        
-
-        return {}
-    }
-})
-</script>
-
-<style scoped>
-
-</style>
+<style scoped></style>

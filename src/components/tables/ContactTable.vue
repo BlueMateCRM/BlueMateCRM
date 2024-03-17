@@ -1,7 +1,6 @@
 <script setup lang="ts">
 import { contactHeaders } from "../../data/tableData.ts";
 import { contacts } from "../../data/staticData.ts";
-import AppTable from "./app/AppTable.vue";
 import TableHeader from "../ui/headers/TableHeader.vue";
 // import { ref } from "vue";
 // import InfoModal from "../modals/InfoModal.vue";

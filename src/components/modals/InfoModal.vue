@@ -5,7 +5,7 @@ import Frame from "../partials/Frame.vue";
 import ModalHeader from "../ui/headers/ModalHeader.vue";
 import AsideAccordion from "../accordions/AsideAccordion.vue";
 import AppAccordion from "../accordions/AppAccordion.vue";
-// import MainMap from "../partials/MainMap.vue";
+import MainMap from "../partials/MainMap.vue";
 
 const route = useRoute();
 const props = defineProps({
@@ -156,7 +156,7 @@ function changeWidth() {
         <section class="modal-content h-auto overflow-auto bg-bglightGray p-4">
           <Frame />
           <AppAccordion title="Map" :isOpen="true" class="mt-5">
-            <!-- <MainMap /> -->
+            <MainMap />
           </AppAccordion>
         </section>
       </div>

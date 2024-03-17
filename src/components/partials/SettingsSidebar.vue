@@ -1,10 +1,7 @@
 <script setup lang="ts">
 import LinksAccordion from "../../components/accordions/LinksAccorsion.vue";
 const props = defineProps({
-  routes: {
-    type: Array,
-    required: true,
-  },
+  routes: {} as () => any,
 });
 </script>
 

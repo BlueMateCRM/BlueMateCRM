@@ -2,7 +2,6 @@
 import { automationHeader } from "../../../../data/tableData.ts";
 import { automation } from "../../../../data/staticData.ts";
 import SettingsHeader from "../../../../components/ui/headers/SettingsHeader.vue";
-import AppTable from "../../../../components/tables/app/AppTable.vue";
 import Select from "../../../../components/ui/form_elements/Select.vue";
 </script>
 

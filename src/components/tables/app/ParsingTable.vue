@@ -1,13 +1,7 @@
 <script setup lang="ts">
 const props = defineProps({
-  headers: {
-    type: Array,
-    required: true,
-  },
-  data: {
-    type: Array,
-    required: true,
-  },
+  headers: {} as () => any,
+  data: {} as () => any,
   title: {
     type: String,
     required: true,

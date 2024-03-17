@@ -3,14 +3,8 @@ import { ref } from "vue";
 import Checkbox from "../../ui/form_elements/Checkbox.vue";
 
 const props = defineProps({
-  headers: {
-    type: Array,
-    required: true,
-  },
-  data: {
-    type: Array,
-    required: true,
-  },
+  headers: {} as () => any,
+  data: {} as () => any,
   notMustCheck: Boolean,
 });
 

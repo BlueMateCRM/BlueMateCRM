@@ -1,6 +1,6 @@
 <script lang="ts" setup>
 import { ref } from "vue";
-import CalendarRight from "./Calendar.vue";
+// import Calendar from "./Calendar.vue";
 // import { Calendar, Search } from "@element-plus/icons-vue";
 // input
 const input1 = ref("");
@@ -154,19 +154,14 @@ const options = [
       <div>
         <el-input
           v-model="textarea"
-          style="width: 360px; background-color: burlywood;"
+          style="width: 360px; background-color: burlywood"
           :rows="2"
           type="textarea"
         />
       </div>
       <div class="flex-coll space-y-3">
         <div>
-          <el-select
-            v-model="select3"
-            clearable
-            placeholder="Select"
-            
-          >
+          <el-select v-model="select3" clearable placeholder="Select">
             <el-option
               v-for="item in options"
               :key="item.value"
@@ -176,12 +171,7 @@ const options = [
           </el-select>
         </div>
         <div>
-          <el-select
-            v-model="select3"
-            clearable
-            placeholder="Select"
-            
-          >
+          <el-select v-model="select3" clearable placeholder="Select">
             <el-option
               v-for="item in options"
               :key="item.value"
@@ -194,11 +184,10 @@ const options = [
     </div>
     <!-- Right Calendar -->
     <div class="w-[30%]">
-      <CalendarRight />
+      <!-- <Calendar /> -->
     </div>
   </div>
 </template>
-
 
 <style scoped>
 .border-blue-500 {

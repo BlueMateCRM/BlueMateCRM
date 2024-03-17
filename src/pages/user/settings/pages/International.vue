@@ -1,6 +1,5 @@
 <script setup lang="ts">
 // import { ref } from "vue";
-import AppTable from "../../../../components/tables/app/AppTable.vue";
 import { groundHeader } from "../../../../data/tableData.ts";
 import { international } from "../../../../data/staticData.ts";
 import SettingsHeader from "../../../../components/ui/headers/SettingsHeader.vue";
