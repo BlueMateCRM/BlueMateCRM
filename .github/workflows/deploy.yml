@@ -36,5 +36,5 @@ jobs:
         script_stop: true
         script: |
           git --work-tree="${{ env.TARGET_FOLDER }}" --git-dir="${{ env.TARGET_FOLDER }}/.git" clean -f .
-          yarn --cwd "${{ env.TARGET_FOLDER }}"
-          yarn --cwd "${{ env.TARGET_FOLDER }}" run build
+          /usr/local/bin/yarn --cwd "${{ env.TARGET_FOLDER }}"
+          /usr/local/bin/yarn --cwd "${{ env.TARGET_FOLDER }}" run build
