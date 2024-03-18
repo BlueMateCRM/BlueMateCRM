@@ -21,7 +21,7 @@ export const clientRoutes = {
           path: "contract-completed",
           name: "contract-main-completed",
           component: () =>
-            import("../pages/client/contract/pages/TermCompleted.vue"),
+            import("../pages/client/contract/pages/ContactCompleted.vue"),
         },
         {
           path: "term-completed",
