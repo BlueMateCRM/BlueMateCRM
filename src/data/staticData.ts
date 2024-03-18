@@ -966,9 +966,11 @@ export const automation = [
 
 export const infoModal = {
   details: {
-    name: "2022 Toyota Camry",
+    vehicle: "2022 Toyota Camry",
     condition: "Runs and drives",
     type: "Car",
+    origin: "Queens, NY 11101",
+    destination: "San Diego, CA 78594",
     pickup: "Queens, NY, 11101",
     delivery: "San Diego, CA 78594",
     location: "Residential to residential",
