@@ -2,6 +2,7 @@
 import BlotFormatter from "quill-blot-formatter";
 import "@vueup/vue-quill/dist/vue-quill.snow.css";
 import { QuillEditor } from "@vueup/vue-quill";
+import { ref } from "vue";
 var toolbarOptions = [
   "bold",
   "italic",
@@ -14,6 +15,8 @@ var toolbarOptions = [
   { indent: "+1" },
   "clean",
 ];
+let create = ref(false);
+
 
 const modules = {
   name: "blotFormatter",
@@ -27,14 +30,21 @@ const modules = {
 </script>
 <template>
   <div>
-    <QuillEditor :modules="modules" :toolbar="toolbarOptions" />
-    <div class="flex justify-end space-x-2 px-4 py-2">
-      <Button class="font-semibold text-gray-700 border-bleck bg-hoverGray  px-3 text-sm rounded">
-        Cancel
-      </Button>
-      <Button class="font-semibold text-white bg-mainBlue px-3 text-sm rounded">
-        Save
-      </Button>
+    <div v-show="create">
+      <QuillEditor :modules="modules" :toolbar="toolbarOptions" />
+      <div class="flex justify-end space-x-2 px-4 py-2">
+        <Button class="font-semibold text-gray-700 border border-gray-300 bg-bglightGray  px-3 text-sm rounded"  @click="create = false">
+          Cancel
+        </Button>
+        <Button class="font-semibold text-white bg-mainBlue px-3 text-sm rounded">
+          Save
+        </Button>
+      </div>
+    </div>
+    <div class="" v-show="!create">
+      <div class="p-2 pb-5 bg-white cursor-pointer" @click="create = true">
+        <p class="text-gray-400">Click here to type, @name...</p>
+      </div>
     </div>
   </div>
 </template>

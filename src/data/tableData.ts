@@ -162,3 +162,13 @@ export const automationHeader = [
   { title: "Delay", value: "delay" },
   { title: "Status", value: "status" },
 ];
+
+
+export const PaymentHeaders = [
+  {title: "Created", value: "created"},
+  {title: "Amount", value: "amount"},
+  {title: "Amount charged", value: "amount_charged"},
+  {title: "Payment type", value: "Payment_type"},
+  {title: "Direction", value: "direction"},
+  {title: "Status", value: "status"},
+]

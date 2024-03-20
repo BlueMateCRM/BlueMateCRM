@@ -92,9 +92,7 @@ const modules = {
                 <div>
                     <QuillEditor :modules="modules" :toolbar="toolbarOptions" />
                     <div class="flex justify-end space-x-2 px-4 py-2">
-                        <Button class="font-semibold text-gray-700 border-bleck bg-hoverGray  px-3 text-sm rounded">
-                            Cancel
-                        </Button>
+                        <i class='bx bxs-trash text-lg mr-1 cursor-pointer' style='color:red'></i>
                         <Button class="font-semibold text-white bg-mainBlue px-3 text-sm rounded">
                             Save
                         </Button>
