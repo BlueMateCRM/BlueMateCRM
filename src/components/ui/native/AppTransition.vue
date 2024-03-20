@@ -1,10 +1,10 @@
+<script setup lang="ts"></script>
+
 <template>
   <transition name="app-transition">
     <slot></slot>
   </transition>
 </template>
-
-<script setup></script>
 
 <style>
 .app-transition-enter-active,

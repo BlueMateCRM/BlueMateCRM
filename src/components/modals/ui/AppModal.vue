@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import AppTransition from "@/components/ui/native/AppTransition.vue";
+import AppTransition from "../../ui/native/AppTransition.vue";
 const props = defineProps({
   modelValue: {
     type: Boolean,
