@@ -1,35 +1,24 @@
 <script setup lang="ts">
 import { ref } from "vue";
+import { makePdf } from "../../../../composables/makePdf.ts";
 import ContactHeader from "@/components/client/ContactHeader.vue";
-import { jsPDF } from "jspdf";
-// import html2PDF from "jspdf-html2canvas";
+import SignContract from "@/components/modals/ui/sign/SignContract.vue";
 
+const openSign = ref<any>(true);
 const show = ref(true);
 const page = ref("");
+
+// make PDF
 const download = () => {
   show.value = false;
-  const pdf = new jsPDF({
-    orientation: "p",
-    unit: "px",
-    format: "a4",
-    putOnlyUsedFonts: true,
-  });
-  const html = page.value;
-  pdf.html(html, {
-    callback: (pdf) => {
-      pdf.save("contract.pdf");
-    },
-    margin: [25, 0, 25, 0],
-    autoPaging: "text",
-    x: 0,
-    y: 0,
-    width: 446,
-    windowWidth: 892,
-  });
+  makePdf(page.value, "contract");
 };
 </script>
 
 <template>
+  <!-- sign modal -->
+  <SignContract ref="openSign" />
+
   <!-- title & actions -->
   <ContactHeader class="border border-gray-300 border-b-0 rounded-t">
     <template #actions>
@@ -47,15 +36,6 @@ const download = () => {
     </template>
   </ContactHeader>
   <!-- contract -->
-  <button
-    @click="download()"
-    class="flex items-center px-[10px] py-[3px] bg-white border border-gray-300 rounded"
-  >
-    <span class="w-4 h-4 rounded flex items-center justify-center bg-mainBlue">
-      <i class="bx bxs-download text-xs text-white"></i>
-    </span>
-    <span class="text-textBlack font-semibold ml-[5px]">Download</span>
-  </button>
   <section class="w-full py-[30px] border border-gray-300">
     <div ref="page" class="px-[30px] text-textBlack">
       <!-- header -->
@@ -285,6 +265,7 @@ const download = () => {
             <h3 class="font-medium">Alex Summer</h3>
             <p class="pt-[5px]">alexsummer@gmail.com</p>
             <div
+              @click="openSign.openModal"
               class="flex items-center h-[64.4px] w-[65%] min-w-[291px] p-[10px] border border-gray-300 my-[10px] rounded"
             >
               <button
@@ -305,9 +286,12 @@ const download = () => {
   <footer
     class="flex justify-end border border-gray-300 bg-lightBlue border-t-0 py-[9.5px] px-[25px] rounded-b"
   >
-    <button class="w-[125px] py-1 bg-mainBlue font-semibold text-white rounded">
+    <routerLink
+      to="/client/contract/term"
+      class="w-[125px] text-center py-1 bg-mainBlue font-semibold text-white rounded"
+    >
       Next
-    </button>
+    </routerLink>
   </footer>
 </template>
 

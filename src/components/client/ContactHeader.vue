@@ -7,8 +7,8 @@
     >
       Agreement
     </h2>
-    <div class="flex justify-end">
-      <slot name="actions" />
+    <div class="flex justify-end relative z-10">
+      <slot name="actions"></slot>
     </div>
   </header>
 </template>
