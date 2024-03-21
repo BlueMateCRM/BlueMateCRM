@@ -22,7 +22,7 @@ const sendForm = () => {
 
 <template>
   <AppModal v-model="dialog">
-    <div class="w-[420px] rounded-md relative">
+    <div class="w-[420px]">
       <form @submit.prevent="sendForm">
         <!-- header -->
         <header

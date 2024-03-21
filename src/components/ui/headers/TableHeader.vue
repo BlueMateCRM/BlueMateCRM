@@ -6,6 +6,9 @@ const props = defineProps({
     type: String,
     required: true,
   },
+  create: {
+    type: Function,
+  },
 });
 
 const input = ref("");
@@ -40,7 +43,10 @@ const timeStatus = [
           <i class="bx bx-calendar text-xl text-textGray"></i>
         </div>
         <div class="border-l border-mainGray pl-[10px]">
-          <Button class="font-semibold text-white bg-mainBlue px-3 text-sm">
+          <Button
+            @click="props.create"
+            class="font-semibold text-white bg-mainBlue px-3 text-sm"
+          >
             + New {{ props.title }}
           </Button>
         </div>

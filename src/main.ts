@@ -2,6 +2,7 @@ import { createApp } from "vue";
 import App from "./App.vue";
 import router from "./router/index.ts";
 import { createPinia } from "pinia";
+import veeValidate from "./composables/veeValidate.ts";
 import ElementPlus from "element-plus";
 import "element-plus/dist/index.css";
 import "boxicons/css/boxicons.min.css";
@@ -20,6 +21,7 @@ app.component("Button", Button);
 // main packages
 app.use(router);
 app.use(ElementPlus);
+app.use(veeValidate);
 app.use(createPinia());
 // run app
 app.mount("#app");

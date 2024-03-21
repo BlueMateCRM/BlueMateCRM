@@ -10,6 +10,7 @@
   },
   "dependencies": {
     "@daypilot/daypilot-lite-vue": "^3.20.1",
+    "@vee-validate/rules": "^4.12.6",
     "@vueup/vue-quill": "^1.2.0",
     "axios": "^1.6.7",
     "boxicons": "^2.1.4",
@@ -18,6 +19,7 @@
     "leaflet": "^1.9.4",
     "pinia": "^2.1.7",
     "quill-blot-formatter": "^1.0.5",
+    "vee-validate": "^4.12.6",
     "vue": "^3.4.18",
     "vue-router": "^4.2.5"
   },
