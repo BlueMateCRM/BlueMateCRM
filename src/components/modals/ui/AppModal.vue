@@ -11,12 +11,10 @@ const props = defineProps({
 <template>
   <AppTransition>
     <div
-      class="app-modal-shadow fixed top-0 left-0 w-full h-screen"
+      class="app-modal-shadow fixed top-0 left-0 w-full h-screen py-[14px]"
       v-if="props.modelValue"
     >
-      <div
-        class="content w-full h-full flex justify-center py-[14px] overflow-y-auto"
-      >
+      <div class="content w-full h-full flex justify-center overflow-y-scroll">
         <slot></slot>
       </div>
     </div>

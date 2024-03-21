@@ -4,10 +4,13 @@ import { leads } from "../../data/staticData.ts";
 import { ref } from "vue";
 import InfoModal from "../modals/InfoModal.vue";
 import TableHeader from "../ui/headers/TableHeader.vue";
+import Create from "../modals/ui/leads/Create.vue";
 
 const showModal = ref<boolean>(false);
 const singleData = ref<any>({});
+const openCreate = ref<any>(true);
 
+// info modal
 function hideModal() {
   showModal.value = false;
 }
@@ -16,6 +19,7 @@ function openModal(data: any) {
   showModal.value = true;
 }
 
+// change data of info modal by index
 function getDataByNum(index: number | object) {
   if (typeof index === "number") {
     singleData.value = { ...leads[index], i: index };
@@ -24,7 +28,12 @@ function getDataByNum(index: number | object) {
 </script>
 
 <template>
+  <!-- CRUD modals -->
+  <Create ref="openCreate" />
+
+  <!-- main -->
   <section>
+    <!-- info modal -->
     <InfoModal
       :close="hideModal"
       :show="showModal"
@@ -32,7 +41,11 @@ function getDataByNum(index: number | object) {
       :next="getDataByNum"
       :length="leads.length"
     />
-    <TableHeader title="lead" />
+
+    <!-- header -->
+    <TableHeader title="lead" :create="openCreate.openModal" />
+
+    <!-- table -->
     <AppTable :data="leads" :headers="leadHeaders">
       <template #td_id="{ item }">
         <span class="text-mainBlue cursor-pointer" @click="openModal(item)">

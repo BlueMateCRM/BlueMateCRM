@@ -4,10 +4,13 @@ import { orders } from "../../data/staticData.ts";
 import { ref } from "vue";
 import InfoModal from "../modals/InfoModal.vue";
 import TableHeader from "../ui/headers/TableHeader.vue";
+import Create from "../modals/ui/orders/Create.vue";
 
 const showModal = ref<boolean>(false);
 const singleData = ref<any>({});
+const openCreate = ref<any>(true);
 
+// info modal
 function hideModal() {
   showModal.value = false;
 }
@@ -16,6 +19,7 @@ function openModal(data: any) {
   showModal.value = true;
 }
 
+// change data of info modal by index
 function getDataByNum(index: number | object) {
   if (typeof index === "number") {
     singleData.value = { ...orders[index], i: index };
@@ -24,7 +28,12 @@ function getDataByNum(index: number | object) {
 </script>
 
 <template>
+  <!-- CRUD modals -->
+  <Create ref="openCreate" />
+
+  <!-- main -->
   <section>
+    <!-- info modal -->
     <InfoModal
       :close="hideModal"
       :show="showModal"
@@ -32,7 +41,11 @@ function getDataByNum(index: number | object) {
       :next="getDataByNum"
       :length="orders.length"
     />
-    <TableHeader title="order" />
+
+    <!-- header -->
+    <TableHeader title="order" :create="openCreate.openModal" />
+
+    <!-- table -->
     <AppTable :data="orders" :headers="orderHeaders">
       <template #td_id="{ item }">
         <span class="text-mainBlue cursor-pointer" @click="openModal(item)">

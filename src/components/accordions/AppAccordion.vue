@@ -37,7 +37,7 @@ const openAccordion = (e: any) => {
     <!-- accordion -->
     <div
       class="overflow-hidden transition-all duration-500"
-      :class="open ? 'max-h-[800px]' : 'max-h-0'"
+      :class="open ? 'max-h-[1600px]' : 'max-h-0'"
     >
       <slot />
     </div>
