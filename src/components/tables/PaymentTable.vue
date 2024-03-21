@@ -24,9 +24,7 @@ import { payments } from "../../data/staticData.ts";
           <!-- {{ item }} -->
           <td v-for="(td, tdIndex) in PaymentHeaders" class=" px-3 py-[9.5px] text-[15px]" :key="tdIndex + 'TDIndex'">
             <div class="">
-              <slot :name="`td_${td.value}`" :item="{ ...item, i: dataIndex }">{{
-            item[td.value]
-          }}</slot>
+              <slot :name="`td_${td.value}`" :item="{ ...item, i: dataIndex }">{{ (item as any)[td.value] }}</slot>
             </div>
           </td>
         </tr>
