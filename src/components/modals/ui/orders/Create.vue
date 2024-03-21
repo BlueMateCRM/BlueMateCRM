@@ -76,7 +76,7 @@ const sendForm = () => {
               type="submit"
               class="py-[2px] px-3 min-w-[65px] rounded text-white bg-mainBlue font-medium ml-[10px]"
             >
-              Sign
+              Save
             </button>
           </div>
         </header>

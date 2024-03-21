@@ -39,12 +39,6 @@ const openAccordion = (e: any) => {
       </div>
       <div class="flex items-center">
         <slot name="payment" />
-        <div
-          @click="isActiveEdit = !isActiveEdit"
-          class="bg-white w-5 h-5 mx-1 rounded border border-gray-300 flex items-center justify-center"
-        >
-          <i class="bx bx-pencil text-sm text-textBlack"></i>
-        </div>
         <slot name="operation" />
       </div>
     </div>
@@ -54,7 +48,7 @@ const openAccordion = (e: any) => {
       :class="open ? 'max-h-[800px]' : 'max-h-0'"
     >
       <li
-        class="py-1 px-2 flex gap-x-4 hover:bg-gray-100 cursor-pointer duration-200"
+        class="py-1 px-2 flex gap-x-4 hover:bg-gray-100 cursor-pointer duration-200 group"
         v-for="item in Object.keys(props.data)"
       >
         <div class="w-1/3 text-nowrap overflow-hidden">
@@ -64,7 +58,8 @@ const openAccordion = (e: any) => {
         <div class="w-2/3 flex justify-between items-center">
           <p
             v-if="!isActiveEdit"
-            class="text-textBlack bg-lightBlue text-sm px-1 rounded"
+            class="text-textBlack text-sm px-1 rounded"
+            :class="false ? 'bg-lightBlue' : ''"
           >
             {{ props.data[item] }}
           </p>
@@ -74,10 +69,17 @@ const openAccordion = (e: any) => {
             :value="props.data[item]"
             class="outline-none rounded py-[2px] px-2 text-sm border border-gray-300"
           />
-          <div
-            class="bg-white w-5 h-5 rounded border border-gray-200 flex items-center justify-center"
-          >
-            <i class="bx bx-copy text-sm text-textBlack"></i>
+          <div class="flex opacity-0 group-hover:opacity-100 duration-200">
+            <div
+              class="bg-white w-5 h-5 rounded border border-gray-200 flex items-center justify-center"
+            >
+              <i class="bx bx-pencil text-sm text-textBlack"></i>
+            </div>
+            <div
+              class="bg-white w-5 h-5 rounded border border-gray-200 flex items-center justify-center ml-1"
+            >
+              <i class="bx bx-copy text-sm text-textBlack"></i>
+            </div>
           </div>
         </div>
       </li>
