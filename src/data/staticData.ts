@@ -107,16 +107,67 @@ export const orders = [
   },
   {
     id: 600005,
-    quoted: "01/21/2024 09:01 AM",
-    customer: "Micheal Jonson",
-    phone: "(999) 999-9999",
-    vehicle: "2022 Toyota Sienna",
-    origin: "New York, NY 11101",
+    quoted: "01/21/2024",
+    customer: "$200.00",
+    phone: "$0.00",
+    vehicle: "Zelle",
+    origin: "Customer to Broker",
     destination: "San Diego, CA 78329",
     price: "1200",
     date: "03/12/2024",
     note: "url",
   },
+];
+export const payments = [
+  {
+    created: "01/21/2024",
+    amount: "$200.00",
+    amount_charged: "$0.00",
+    Payment_type:  "Zelle",
+    direction: "Customer to Broker",
+    status: null,
+  },
+  {
+    created: "01/21/2024",
+    amount: "$200.00",
+    amount_charged: "$0.00",
+    Payment_type:  "Zelle",
+    direction: "Customer to Broker",
+    status: null,
+  },
+  {
+    created: "01/21/2024",
+    amount: "$200.00",
+    amount_charged: "$0.00",
+    Payment_type:  "Zelle",
+    direction: "Customer to Broker",
+    status: null,
+  },
+  {
+    created: "01/21/2024",
+    amount: "$200.00",
+    amount_charged: "$0.00",
+    Payment_type:  "Zelle",
+    direction: "Customer to Broker",
+    status: null,
+  },
+  {
+    created: "01/21/2024",
+    amount: "$200.00",
+    amount_charged: "$0.00",
+    Payment_type:  "Zelle",
+    direction: "Customer to Broker",
+    status: null,
+  },
+  {
+    created: "01/21/2024",
+    amount: "$200.00",
+    amount_charged: "$0.00",
+    Payment_type:  "Zelle",
+    direction: "Customer to Broker",
+    status: null,
+  },
+
 ];
 
 export const tasks = [

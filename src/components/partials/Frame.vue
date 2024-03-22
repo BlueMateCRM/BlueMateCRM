@@ -1,27 +1,21 @@
 <script setup lang="ts">
 import { ref } from "vue";
-// import { QuillEditor } from "@vueup/vue-quill";
-// import BlotFormatter from "quill-blot-formatter";
 import Files from "../ui/Files.vue";
 import Tasks from "../ui/Tasks.vue";
 import Phone from "../ui/Phone.vue";
+import Notes from "../ui/Notes.vue";
 import Email from "../ui/Email.vue";
 import Contact from "../ui/Contract.vue";
 import Payment from "../ui/Payment.vue";
 import "@vueup/vue-quill/dist/vue-quill.snow.css";
 let content = ref(1);
-// var toolbarOptions = ["bold", "italic", "underline", "link", "ql-image", "clean"];
-// const modules = {
-//   name: "blotFormatter",
-//   module: BlotFormatter,
-//   options: {
-//     upload: async (file: File) => {
-//       console.log(file);
-//     },
-//   },
-// };
+
+import { useRoute } from "vue-router";
+const route = useRoute();
+
 </script>
 <template>
+  <!-- <pre>{{ route.path.split('/').pop() }}</pre> -->
   <div class="w-full">
     <!-- Frame Header -->
     <nav
@@ -59,7 +53,7 @@ let content = ref(1);
         <i class="bx bx-envelope text-2xl mr-1"></i>
         <p class="text-lg">Email</p>
       </div>
-      <div
+      <div v-if="route.path !== '/user/leads' && route.path !== '/user/quotes'"
         class="flex h-full items-center px-3 py-2 text-gray-800"
         :class="{ price: content == 5 }"
         @click="content = 5"
@@ -67,7 +61,7 @@ let content = ref(1);
         <i class="bx bx-file text-2xl mr-1"></i>
         <p class="text-lg">Files</p>
       </div>
-      <div
+      <div v-if="route.path !== '/user/leads' && route.path !== '/user/quotes'"
         class="flex h-full items-center px-3 py-2 text-gray-800"
         :class="{ price: content == 6 }"
         @click="content = 6"
@@ -75,7 +69,7 @@ let content = ref(1);
         <i class="bx bx-file text-2xl mr-1"></i>
         <p class="text-lg">Contract</p>
       </div>
-      <div
+      <div v-if="route.path !== '/user/leads' && route.path !== '/user/quotes'"
         class="flex h-full items-center px-3 py-2 text-gray-800"
         :class="{ price: content == 7 }"
         @click="content = 7"
@@ -87,9 +81,9 @@ let content = ref(1);
 
     <!-- Frame content -->
     <div class="w-full border bg-white rounded-b-md border-gray-400">
-      <!-- Notes -->
+      <!-- Notes -->      
       <div v-show="content == 1" class="bg-[#FFF4CC] h-full overflow-y-auto">
-        <!-- <QuillEditor :modules="modules" :toolbar="toolbarOptions" /> -->
+        <Notes/>
       </div>
       <!-- Tasks -->
       <div v-show="content == 2" class="h-full">
