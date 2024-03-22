@@ -15,9 +15,7 @@ const openAccordion = () => {
 </script>
 
 <template>
-  <div
-    class="px-[10px] py-[5px] rounded-md bg-transparent hover:bg-bglightGray duration-200 cursor-default"
-  >
+  <div class="rounded-md bg-transparent duration-200 cursor-default">
     <!-- title   -->
     <div
       class="w-full flex items-center justify-between duration-200"

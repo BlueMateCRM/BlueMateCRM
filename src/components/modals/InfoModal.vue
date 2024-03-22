@@ -7,7 +7,6 @@ import AsideAccordion from "../accordions/AsideAccordion.vue";
 import AppAccordion from "../accordions/AppAccordion.vue";
 import MainMap from "../partials/MainMap.vue";
 import { infoModal } from "../../data/staticData.ts";
-import Create from "../modals/ui/customer/Create.vue";
 
 const route = useRoute();
 const props = defineProps({
@@ -32,7 +31,7 @@ const props = defineProps({
     required: true,
   },
 });
-const openCreate = ref<any>(false);
+
 const isFull = ref<boolean>(false);
 
 function nextElement() {
@@ -55,11 +54,9 @@ function changeWidth() {
 </script>
 
 <template>
-  <Create ref="openCreate" />
-
   <div
     id="info-modal"
-    class="fixed top-[58.2px] bg-white shadow-xl z-50 border duration-200"
+    class="fixed top-[58.2px] bg-white shadow-xl z-40 border duration-200"
     :class="props.show ? 'right-0' : '-right-full'"
     :style="isFull ? 'width: calc(100% - 56px);' : 'width: 80%;'"
   >
@@ -142,7 +139,6 @@ function changeWidth() {
             <template #operation>
               <div class="flex">
                 <div
-                  @click="openCreate.openModal"
                   class="bg-white w-5 h-5 mx-1 rounded border border-gray-300 flex items-center justify-center"
                 >
                   <i class="bx bx-pencil text-sm text-textBlack"></i>

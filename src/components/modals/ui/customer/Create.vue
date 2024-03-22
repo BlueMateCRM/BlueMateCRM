@@ -1,8 +1,6 @@
 <script setup lang="ts">
 import { ref, reactive } from "vue";
 import AppModal from "../AppModal.vue";
-import AppAccordion from "@/components/accordions/AppAccordion.vue";
-import BaseAccardion from "@/components/accordions/BaseAccardion.vue";
 
 // modal open-close
 const dialog = ref(false);

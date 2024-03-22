@@ -87,7 +87,10 @@ const sendForm = () => {
           >
             <AppAccordion title="Details" :isOpen="true">
               <!-- vehicle form -->
-              <BaseAccardion :isOpen="true" class="mb-[10px]">
+              <BaseAccardion
+                :isOpen="true"
+                class="mb-[10px] px-[10px] py-[5px] hover:bg-bglightGray"
+              >
                 <template #title>
                   <div class="flex items-center">
                     <i class="bx bxs-car text-mainBlue text-lg mr-[10px]"></i>
@@ -248,7 +251,10 @@ const sendForm = () => {
                 </el-select>
               </div>
               <!-- Pickup form -->
-              <BaseAccardion :isOpen="true" class="mb-[10px]">
+              <BaseAccardion
+                :isOpen="true"
+                class="mb-[10px] px-[10px] py-[5px] hover:bg-bglightGray"
+              >
                 <template #title>
                   <div class="flex items-center">
                     <i class="bx bxs-car text-mainBlue text-lg mr-[10px]"></i>
@@ -408,7 +414,10 @@ const sendForm = () => {
                 </template>
               </BaseAccardion>
               <!-- Delivery form -->
-              <BaseAccardion :isOpen="true" class="mb-[10px]">
+              <BaseAccardion
+                :isOpen="true"
+                class="mb-[10px] px-[10px] py-[5px] hover:bg-bglightGray"
+              >
                 <template #title>
                   <div class="flex items-center">
                     <i class="bx bxs-car text-mainBlue text-lg mr-[10px]"></i>
