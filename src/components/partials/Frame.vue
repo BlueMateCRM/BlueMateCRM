@@ -53,7 +53,7 @@ const route = useRoute();
         <i class="bx bx-envelope text-2xl mr-1"></i>
         <p class="text-lg">Email</p>
       </div>
-      <div v-if="route.path !== '/user/leads' && route.path !== '/user/quotes'"
+      <div v-if="route.path !== '/user/leads'"
         class="flex h-full items-center px-3 py-2 text-gray-800"
         :class="{ price: content == 5 }"
         @click="content = 5"
