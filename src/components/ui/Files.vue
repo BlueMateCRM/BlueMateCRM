@@ -37,7 +37,7 @@ const resetDrop = () => {
 </script>
 
 <template>
-  <div>x
+  <div>
     <div class="flex flex-col space-y-4 mx-3">
       <div class="w-full">
         <input type="text" class="w-full h-10 focus:border-none focus:outline-none focus:ring-0" placeholder="Title" />
