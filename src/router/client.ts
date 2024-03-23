@@ -35,6 +35,12 @@ export const clientRoutes = {
           component: () =>
             import("../pages/client/contract/pages/PaymentApps.vue"),
         },
+        {
+          path: "credit-card",
+          name: "credit-card",
+          component: () =>
+            import("../pages/client/contract/pages/CreditCard.vue"),
+        },
       ],
     },
   ],
