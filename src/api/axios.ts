@@ -1,5 +1,8 @@
 import axios from "axios";
 
+// === Base URL for all requests ===
+axios.defaults.baseURL = import.meta.env.VITE_BASE_URL;
+
 // === Add a request interceptor ===
 axios.interceptors.request.use(
   (config) => {
@@ -7,7 +10,7 @@ axios.interceptors.request.use(
     if (token) {
       config.headers["Authorization"] = `Bearer ${token}`;
     }
-    config.headers["Accsess-Control-Allow-Origin"] = "*";
+    // config.headers["Accsess-Control-Allow-Origin"] = "*";
 
     return config;
   },
@@ -24,3 +27,5 @@ axios.interceptors.response.use(
     return Promise.reject(error);
   }
 );
+
+export default axios;

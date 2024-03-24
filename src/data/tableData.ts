@@ -1,13 +1,12 @@
 export const leadHeaders = [
   { title: "id", value: "id" },
-  { title: "recieved", value: "recieved" },
-  { title: "customer", value: "customer" },
-  { title: "phone", value: "phone" },
-  { title: "vehicle", value: "vehicle" },
-  { title: "origin", value: "origin" },
-  { title: "destination", value: "destination" },
-  { title: "price", value: "price" },
-  { title: "Est. ship", value: "date" },
+  { title: "recieved", value: "createdAt" },
+  { title: "customer", value: "customerName" },
+  { title: "phone", value: "customerPhone" },
+  { title: "vehicle", value: "vehicleName" },
+  { title: "origin", value: "originName" },
+  { title: "destination", value: "destinationName" },
+  { title: "Est. ship", value: "dateEstShip" },
 ];
 
 export const orderHeaders = [
@@ -163,12 +162,11 @@ export const automationHeader = [
   { title: "Status", value: "status" },
 ];
 
-
 export const PaymentHeaders = [
-  {title: "Created", value: "created"},
-  {title: "Amount", value: "amount"},
-  {title: "Amount charged", value: "amount_charged"},
-  {title: "Payment type", value: "Payment_type"},
-  {title: "Direction", value: "direction"},
-  {title: "Status", value: "status"},
-]
+  { title: "Created", value: "created" },
+  { title: "Amount", value: "amount" },
+  { title: "Amount charged", value: "amount_charged" },
+  { title: "Payment type", value: "Payment_type" },
+  { title: "Direction", value: "direction" },
+  { title: "Status", value: "status" },
+];

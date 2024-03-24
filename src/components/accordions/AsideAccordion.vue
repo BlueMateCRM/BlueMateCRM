@@ -53,7 +53,9 @@ const openAccordion = (e: any) => {
       >
         <div class="w-1/3 text-nowrap overflow-hidden">
           <i class="bx bxs-car text-mainBlue mr-2"></i>
-          <span class="text-darkBlue font-medium capitalize">{{ item }}</span>
+          <span class="text-darkBlue font-medium">{{
+            item?.split("_")?.join(" ")
+          }}</span>
         </div>
         <div class="w-2/3 flex justify-between items-center">
           <p

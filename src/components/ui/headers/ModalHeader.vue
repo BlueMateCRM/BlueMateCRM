@@ -1,5 +1,6 @@
 <script setup lang="ts">
 import Select from "../form_elements/Select.vue";
+
 const props = defineProps({
   close: {
     type: Function,
@@ -23,6 +24,10 @@ const props = defineProps({
   },
   data: {
     type: Object,
+    required: true,
+  },
+  showDeteails: {
+    type: Boolean,
     required: true,
   },
 });
@@ -63,7 +68,7 @@ const props = defineProps({
       </div>
       <!-- user info -->
       <p class="flex">
-        <span class="text-mainBlue mr-6">{{ "#" + props.data?.id }}</span>
+        <span class="text-mainBlue mr-6">{{ "#60000" + props.data?.id }}</span>
         <b>{{ props.data?.user }}</b>
       </p>
     </div>
@@ -88,16 +93,20 @@ const props = defineProps({
       </div>
       <!-- filters -->
       <div class="flex">
-        <Select />
+        <Select v-if="props.showDeteails" />
         <Button
+          v-if="props.showDeteails"
           class="ml-6 font-semibold text-white bg-mainBlue px-3 text-sm mr-[10px]"
         >
           Convert to order
         </Button>
-        <Button class="font-semibold text-white bg-mainRed px-3 text-sm mr-6">
+        <Button
+          class="font-semibold text-white bg-mainRed px-3 text-sm"
+          :class="props.showDeteails ? 'mr-6' : 'ml-10'"
+        >
           Archive
         </Button>
-        <Select />
+        <Select v-if="props.showDeteails" />
         <Button
           class="text-gray-500 bg-white w-8 text-xl border border-gray-300 flex items-center justify-center ml-[10px]"
         >
