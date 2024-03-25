@@ -65,15 +65,14 @@ export const useLeadStore = defineStore("lead", {
     },
 
     // CREATE Lead
-    async createLead(data: ILeads) {
+    async createLead(data: any) {
       try {
-        this.leads.loading = true;
+        console.log("Sended data: ", data);
+
         const res = await axios.post("/api/leads/create/", data);
-        return res.data;
+        return res;
       } catch (error: any) {
-        this.leads.error = error;
-      } finally {
-        this.leads.loading = false;
+        console.log(error);
       }
     },
 

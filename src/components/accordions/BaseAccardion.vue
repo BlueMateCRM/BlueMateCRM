@@ -34,8 +34,8 @@ const openAccordion = () => {
     </div>
     <!-- accordion -->
     <div
-      class="overflow-hidden transition-all duration-200"
-      :class="open ? 'max-h-[800px]' : 'max-h-0'"
+      class="transition-all duration-200"
+      :class="open ? 'max-h-[800px]' : 'max-h-0 overflow-hidden'"
     >
       <slot name="body"></slot>
     </div>

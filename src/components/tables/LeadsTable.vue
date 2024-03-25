@@ -47,7 +47,7 @@ async function getDataByNum(index: number | object) {
     />
 
     <!-- header -->
-    <TableHeader title="lead" :create="openCreate.openModal" />
+    <TableHeader title="lead" :create="openCreate?.openModal" />
 
     <!-- loading -->
     <div
