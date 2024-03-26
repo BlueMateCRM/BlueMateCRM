@@ -3,11 +3,10 @@ import { ref } from "vue";
 import { useRoute } from "vue-router";
 import Frame from "../partials/Frame.vue";
 import ModalHeader from "../ui/headers/ModalHeader.vue";
-import AsideAccordion from "../accordions/AsideAccordion.vue";
 import AppAccordion from "../accordions/AppAccordion.vue";
 import MainMap from "../partials/MainMap.vue";
-import { infoModal } from "../../data/staticData.ts";
-import Create from "../modals/ui/customer/Create.vue";
+import Details from "./info/parts/details/index.vue";
+import Person from "./info/parts/person.vue";
 
 const route = useRoute();
 const props = defineProps({
@@ -32,9 +31,8 @@ const props = defineProps({
     required: true,
   },
 });
-const openCreate = ref<any>(false);
-const isFull = ref<boolean>(false);
 
+const isFull = ref<boolean>(false);
 function nextElement() {
   if (+props.data?.i < props.length - 1) {
     props.next(+props.data?.i + 1);
@@ -55,11 +53,9 @@ function changeWidth() {
 </script>
 
 <template>
-  <Create ref="openCreate" />
-
   <div
     id="info-modal"
-    class="fixed top-[58.2px] bg-white shadow-xl z-50 border duration-200"
+    class="fixed top-[58.2px] bg-white shadow-xl z-40 border duration-200"
     :class="props.show ? 'right-0' : '-right-full'"
     :style="isFull ? 'width: calc(100% - 56px);' : 'width: 80%;'"
   >
@@ -105,58 +101,19 @@ function changeWidth() {
         :prev="prevElement"
         :close="props.close"
         :change="changeWidth"
-        :data="{ id: props.data?.id, user: props.data?.customer }"
+        :data="{ id: props.data?.id, user: props.data?.customerName }"
+        :showDeteails="route.path !== '/user/leads'"
       />
       <div class="modal-body flex w-full">
-        <!-- <pre>{{ route.path }}</pre> -->
         <aside
           class="modal-aside pb-4 w-[420px] h-full overflow-y-auto border-r border-gray-300"
         >
           <!-- detail -->
-          <AsideAccordion
-            title="Details"
-            :data="infoModal.details"
-            :isOpen="true"
-          >
-            <template #operation>
-              <div class="flex">
-                <div
-                  class="bg-white w-5 h-5 mx-1 rounded border border-gray-300 flex items-center justify-center"
-                >
-                  <i class="bx bx-pencil text-sm text-textBlack"></i>
-                </div>
-                <button class="w-6 h-5 rounded border border-gray-200 bg-white">
-                  <i
-                    class="bx bx-dots-horizontal-rounded text-sm text-textBlack"
-                  ></i>
-                </button>
-              </div>
-            </template>
-          </AsideAccordion>
-          <!-- person -->
-          <AsideAccordion
-            title="Person"
-            :data="infoModal.person"
-            :isOpen="false"
-          >
-            <template #operation>
-              <div class="flex">
-                <div
-                  @click="openCreate.openModal"
-                  class="bg-white w-5 h-5 mx-1 rounded border border-gray-300 flex items-center justify-center"
-                >
-                  <i class="bx bx-pencil text-sm text-textBlack"></i>
-                </div>
-                <button class="w-6 h-5 rounded border border-gray-200 bg-white">
-                  <i
-                    class="bx bx-dots-horizontal-rounded text-sm text-textBlack"
-                  ></i>
-                </button>
-              </div>
-            </template>
-          </AsideAccordion>
+          <Details :data="props.data" />
+          <Person :data="props.data" />
+
           <!-- payment -->
-          <AsideAccordion
+          <!-- <AsideAccordion
             v-if="route.path !== '/user/leads' && route.path !== '/user/quotes'"
             title="Payment"
             :data="infoModal.payment"
@@ -183,23 +140,50 @@ function changeWidth() {
                 </button>
               </div>
             </template>
-          </AsideAccordion>
+          </AsideAccordion> -->
           <!-- date -->
-          <AsideAccordion
+          <!-- <AsideAccordion
             v-if="route.path !== '/user/leads' && route.path !== '/user/quotes'"
             title="Date"
             :data="infoModal.date"
             :isOpen="false"
-          />
+          /> -->
           <!-- carrier -->
-          <AsideAccordion
+          <!-- <AsideAccordion
             v-if="route.path !== '/user/leads' && route.path !== '/user/quotes'"
             title="Carrier company info"
             :data="infoModal.carrier"
             :isOpen="false"
-          />
+          /> -->
+          <!-- notes -->
+          <!-- <ul class="px-2 mt-3">
+            <li class="flex items-center justify-between">
+              <span class="text-darkBlue font-medium">
+                Notes from shipper
+              </span>
+              <div class="flex">
+                <div
+                  class="bg-white w-5 h-5 mx-1 rounded border border-gray-300 flex items-center justify-center"
+                >
+                  <i class="bx bx-pencil text-sm text-textBlack"></i>
+                </div>
+                <button class="w-6 h-5 rounded border border-gray-200 bg-white">
+                  <i
+                    class="bx bx-dots-horizontal-rounded text-sm text-textBlack"
+                  ></i>
+                </button>
+              </div>
+            </li>
+            <li class="mt-3">
+              <input
+                type="text"
+                disabled
+                class="w-full outline-none rounded py-[2px] px-2 border border-gray-300"
+              />
+            </li>
+          </ul> -->
           <!-- Changes time -->
-          <ul
+          <!-- <ul
             v-if="route.path !== '/user/leads'"
             class="w-full border-t border-gray-300 pt-2 mt-4"
           >
@@ -223,7 +207,7 @@ function changeWidth() {
               <b class="w-2/5 text-darkBlue">Created time</b>
               <span class="w-1/2">March 15, 2024 09:01 AM</span>
             </li>
-          </ul>
+          </ul> -->
         </aside>
         <section class="modal-content h-auto overflow-auto bg-bglightGray p-4">
           <Frame />
