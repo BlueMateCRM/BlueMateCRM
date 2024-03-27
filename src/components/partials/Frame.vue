@@ -2,8 +2,8 @@
 import { ref } from "vue";
 import Files from "../ui/Files.vue";
 import Tasks from "../ui/Tasks.vue";
-import Phone from "../ui/Phone.vue";
-import Notes from "../ui/Notes.vue";
+// import Phone from "../ui/Phone.vue";
+// import Notes from "../ui/Notes.vue";
 import Email from "../ui/Email.vue";
 import Contact from "../ui/Contract.vue";
 import Payment from "../ui/Payment.vue";
@@ -85,7 +85,7 @@ const route = useRoute();
     <div class="w-full border bg-white rounded-b-md border-gray-400">
       <!-- Notes -->
       <div v-show="content == 1" class="bg-[#FFF4CC] h-full overflow-y-auto">
-        <Notes />
+        <!-- <Notes /> -->
       </div>
       <!-- Tasks -->
       <div v-show="content == 2" class="h-full">
@@ -93,7 +93,7 @@ const route = useRoute();
       </div>
       <!-- Phone -->
       <div v-show="content == 3" class="h-full">
-        <Phone />
+        <!-- <Phone /> -->
       </div>
       <!-- Email -->
       <div v-show="content == 4" class="h-full">
