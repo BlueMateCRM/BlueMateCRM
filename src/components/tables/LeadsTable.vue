@@ -1,7 +1,7 @@
 <script setup lang="ts">
 import { leadHeaders } from "../../data/tableData.ts";
 import { ref } from "vue";
-import InfoModal from "../modals/InfoModal.vue";
+import LeadsInfoModal from "../modals/info/LeadsInfoModal.vue";
 import TableHeader from "../ui/headers/TableHeader.vue";
 import Create from "../modals/ui/leads/Create.vue";
 import { useLeadStore } from "../../stores/user/lead.ts";
@@ -29,6 +29,11 @@ async function getDataByNum(index: number | object) {
     singleData.value = { ...leadStore.details.data, i: index };
   }
 }
+
+// open create lead modal
+const openCreateModal = () => {
+  openCreate.value?.openModal();
+};
 </script>
 
 <template>
@@ -38,7 +43,7 @@ async function getDataByNum(index: number | object) {
   <!-- main -->
   <section>
     <!-- info modal -->
-    <InfoModal
+    <LeadsInfoModal
       :close="hideModal"
       :show="showModal"
       :data="singleData"
@@ -47,7 +52,7 @@ async function getDataByNum(index: number | object) {
     />
 
     <!-- header -->
-    <TableHeader title="lead" :create="openCreate?.openModal" />
+    <TableHeader title="lead" :create="openCreateModal" />
 
     <!-- loading -->
     <div

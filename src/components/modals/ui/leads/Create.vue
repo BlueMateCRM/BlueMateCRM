@@ -39,7 +39,7 @@ async function sendForm() {
     origin: +vehicle.origin,
     destination: +vehicle.destionation,
   });
-  if (data.status === 201) {
+  if (data?.status === 201) {
     await leadStore.getAllLeads(0, 15);
 
     vehicle.vehicleYear = "";
@@ -88,7 +88,7 @@ const selectModel = (item: any) => {
   vehicle_model.value = item?.name;
   vehicle_make.value = item?.mark?.name;
   vehicleType.value = item?.vehicleType;
-  vehicle.vehicle = +item?.id;
+  vehicle.vehicle = item?.id;
   model_array.value = [];
 };
 
@@ -169,12 +169,12 @@ const getZip = async (type: string) => {
   const res = await axios.get(url);
   if (type === "delivery") {
     delivery_zip_array.value = res.data.data;
-    vehicle.origin = +res.data.data?.[0]?.id;
+    vehicle.origin = res.data.data?.[0]?.id;
     delivery_city.value = res.data.data?.[0]?.name;
     delivery_state.value = res.data.data?.[0]?.state?.name;
   } else if (type === "pickup") {
     pickup_zip_array.value = res.data.data;
-    vehicle.destionation = +res.data.data?.[0]?.id;
+    vehicle.destionation = res.data.data?.[0]?.id;
     pickup_city.value = res.data.data?.[0]?.name;
     pickup_state.value = res.data.data?.[0]?.state?.name;
   }
@@ -184,13 +184,13 @@ const selectZip = (type: string, item: any) => {
   console.log(item);
 
   if (type === "delivery") {
-    vehicle.origin = +item?.id;
+    vehicle.origin = item?.id;
     delivery_city.value = item?.name;
     delivery_state.value = item?.state?.name;
     delivery_zip.value = item?.zip;
     delivery_zip_array.value = [];
   } else if (type === "pickup") {
-    vehicle.destionation = +item?.id;
+    vehicle.destionation = item?.id;
     pickup_city.value = item?.name;
     pickup_state.value = item?.state?.name;
     pickup_zip.value = item?.zip;

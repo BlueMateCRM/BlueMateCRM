@@ -2,8 +2,8 @@
 import { ref } from "vue";
 import Files from "../ui/Files.vue";
 import Tasks from "../ui/Tasks.vue";
-import Phone from "../ui/Phone.vue";
-import Notes from "../ui/Notes.vue";
+// import Phone from "../ui/Phone.vue";
+// import Notes from "../ui/Notes.vue";
 import Email from "../ui/Email.vue";
 import Contact from "../ui/Contract.vue";
 import Payment from "../ui/Payment.vue";
@@ -12,7 +12,6 @@ let content = ref(1);
 
 import { useRoute } from "vue-router";
 const route = useRoute();
-
 </script>
 <template>
   <!-- <pre>{{ route.path.split('/').pop() }}</pre> -->
@@ -53,7 +52,8 @@ const route = useRoute();
         <i class="bx bx-envelope text-2xl mr-1"></i>
         <p class="text-lg">Email</p>
       </div>
-      <div v-if="route.path !== '/user/leads'"
+      <div
+        v-if="route.path !== '/user/leads'"
         class="flex h-full items-center px-3 py-2 text-gray-800"
         :class="{ price: content == 5 }"
         @click="content = 5"
@@ -61,7 +61,8 @@ const route = useRoute();
         <i class="bx bx-file text-2xl mr-1"></i>
         <p class="text-lg">Files</p>
       </div>
-      <div v-if="route.path !== '/user/leads' && route.path !== '/user/quotes'"
+      <div
+        v-if="route.path !== '/user/leads' && route.path !== '/user/quotes'"
         class="flex h-full items-center px-3 py-2 text-gray-800"
         :class="{ price: content == 6 }"
         @click="content = 6"
@@ -69,7 +70,8 @@ const route = useRoute();
         <i class="bx bx-file text-2xl mr-1"></i>
         <p class="text-lg">Contract</p>
       </div>
-      <div v-if="route.path !== '/user/leads' && route.path !== '/user/quotes'"
+      <div
+        v-if="route.path !== '/user/leads' && route.path !== '/user/quotes'"
         class="flex h-full items-center px-3 py-2 text-gray-800"
         :class="{ price: content == 7 }"
         @click="content = 7"
@@ -81,9 +83,9 @@ const route = useRoute();
 
     <!-- Frame content -->
     <div class="w-full border bg-white rounded-b-md border-gray-400">
-      <!-- Notes -->      
+      <!-- Notes -->
       <div v-show="content == 1" class="bg-[#FFF4CC] h-full overflow-y-auto">
-        <Notes/>
+        <!-- <Notes/> -->
       </div>
       <!-- Tasks -->
       <div v-show="content == 2" class="h-full">
@@ -91,7 +93,7 @@ const route = useRoute();
       </div>
       <!-- Phone -->
       <div v-show="content == 3" class="h-full">
-        <Phone />
+        <!-- <Phone /> -->
       </div>
       <!-- Email -->
       <div v-show="content == 4" class="h-full">

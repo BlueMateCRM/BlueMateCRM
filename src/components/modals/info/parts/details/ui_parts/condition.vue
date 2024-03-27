@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import { ref, onMounted } from "vue";
+import { ref } from "vue";
 
 const props = defineProps({
   title: {
@@ -13,7 +13,7 @@ const input = ref<any>(false);
 const showCondition = ref<boolean>(true);
 const allConditions = ref(["run", "rols", "forklift"]);
 
-const searchCondition = (e) => {
+const searchCondition = (e: any) => {
   if (e.target.value !== "") {
     const result = allConditions.value.filter((item) => {
       if (item.includes(e.target.value)) {
@@ -26,7 +26,7 @@ const searchCondition = (e) => {
   }
 };
 
-const selectCondition = (val) => {
+const selectCondition = (val: string) => {
   condition.value = val;
   showCondition.value = true;
   input.value.value = "";
@@ -77,7 +77,7 @@ const deleteOption = () => {
       <!-- edit modal -->
       <div
         v-if="isOpenEdit"
-        class="w-full rounded-md overflow-hidden shadow-xl"
+        class="w-full rounded-md overflow-hidden border border-gray-300"
       >
         <div class="flex gap-x-1 bg-gray-100 py-1 px-2">
           <span
@@ -93,6 +93,7 @@ const deleteOption = () => {
             class="bg-gray-100 outline-none"
             @input="searchCondition"
           />
+          <i class="bx bx-x text-textBlack text-lg"></i>
         </div>
         <div class="bg-white py-1">
           <ul>

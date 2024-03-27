@@ -10,7 +10,9 @@ import EstShipDate from "./ui_parts/est_ship_date.vue";
 import Source from "./ui_parts/source.vue";
 import TotalTarif from "./ui_parts/total_tarif.vue";
 import Reservation from "./ui_parts/reservation.vue";
+// import {useLeadStore} from "../../../../../stores/user/lead.ts"
 
+// const leadStore = useLeadStore()
 const props = defineProps({
   data: {
     type: Object,
@@ -18,6 +20,11 @@ const props = defineProps({
   },
 });
 const open = ref<boolean>(true);
+
+const updateLead = async (data: any) => {
+  // leadStore.updateLead({})
+  console.log(data);
+};
 </script>
 
 <template>
@@ -52,7 +59,14 @@ const open = ref<boolean>(true);
       :class="open ? 'max-h-[2000px]' : 'max-h-0'"
     >
       <Vehicle
-        :data="{ id: props.data?.vehicle?.id, name: props.data?.vehicleName }"
+        :data="{
+          id: props.data?.vehicle?.id,
+          year: props.data?.vehicleYear,
+          make: props.data?.vehicle?.mark?.name,
+          model: props.data?.vehicle?.name,
+          name: props.data?.vehicleName,
+        }"
+        :editFunction="updateLead"
       />
       <Condition :title="props.data?.condition || ''" />
       <Type :title="props.data?.vehicle?.vehicleType || ''" />
@@ -61,8 +75,8 @@ const open = ref<boolean>(true);
       <TrailerType :title="props.data?.trailerType || ''" />
       <EstShipDate :title="props.data?.trailerType || ''" />
       <Source :title="props.data?.source?.name || ''" />
-      <TotalTarif :title="props.data?.price || '0'" />
-      <Reservation :title="props.data?.reservationPrice || ''" />
+      <TotalTarif :title="+props.data?.price || 0" />
+      <Reservation :title="+props.data?.reservationPrice || 0" />
     </div>
   </div>
 </template>

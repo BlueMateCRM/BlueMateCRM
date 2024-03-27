@@ -110,7 +110,7 @@ const timeStatus = [
     </div>
     <!-- bottom -->
     <div
-      v-if="$props.title === 'task'"
+      v-if="props.title === 'task'"
       class="flex items-center justify-between pt-2"
     >
       <!-- task status -->
