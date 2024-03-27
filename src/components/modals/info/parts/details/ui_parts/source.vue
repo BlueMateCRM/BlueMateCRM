@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import { ref, onMounted } from "vue";
+import { ref } from "vue";
 // import BaseAccordion from "../../../../../accordions/BaseAccardion.vue";
 
 const props = defineProps({
@@ -14,7 +14,7 @@ const input = ref<any>(false);
 const showSource = ref<boolean>(true);
 const allSources = ref(["website", "phone", "email"]);
 
-const searchSource = (e) => {
+const searchSource = (e: any) => {
   if (e.target.value !== "") {
     const result = allSources.value.filter((item) => {
       if (item.includes(e.target.value)) {
@@ -27,7 +27,7 @@ const searchSource = (e) => {
   }
 };
 
-const selectSource = (val) => {
+const selectSource = (val: string) => {
   source.value = val;
   showSource.value = true;
   input.value.value = "";

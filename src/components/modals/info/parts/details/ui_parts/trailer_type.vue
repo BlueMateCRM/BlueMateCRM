@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import { ref, onMounted } from "vue";
+import { ref } from "vue";
 // import BaseAccordion from "../../../../../accordions/BaseAccardion.vue";
 
 const props = defineProps({
@@ -14,7 +14,7 @@ const input = ref<any>(false);
 const showTrailerType = ref<boolean>(true);
 const allTrailerTypes = ref(["open", "enclose"]);
 
-const searchTrailerType = (e) => {
+const searchTrailerType = (e: any) => {
   if (e.target.value !== "") {
     const result = allTrailerTypes.value.filter((item) => {
       if (item.includes(e.target.value)) {
@@ -27,7 +27,7 @@ const searchTrailerType = (e) => {
   }
 };
 
-const selectTrailerType = (val) => {
+const selectTrailerType = (val: string) => {
   trailer_type.value = val;
   showTrailerType.value = true;
   input.value.value = "";
