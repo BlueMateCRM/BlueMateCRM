@@ -43,7 +43,7 @@ const route = useRoute();
         @click="content = 3"
       >
         <i class="bx bx-phone text-2xl mr-1"></i>
-        <p class="text-lg">SMS</p>
+        <p class="text-lg">Phone</p>
       </div>
       <div
         class="flex h-full items-center px-3 py-2 text-gray-800"

@@ -1,8 +1,36 @@
 <script setup lang="ts">
-import { ref } from "vue";
+import { ref, reactive } from "vue";
+import { useFileStore } from "../../stores/user/attachments.ts"
+
+const fileStore = useFileStore();
+
+const sendformfile = reactive({
+  rel: "1",
+  endpointType: "quote",
+  text: "",
+  file: <null | string>(null),
+  user: "",
+});
+
 
 let drop = ref<null | string>(null);
+
 let isfile = ref(false);
+
+async function sendForm() {
+  try {
+    const data = await fileStore.createFile({
+      rel: "quote",
+      // Add other properties you want to send with the file
+    });
+    console.log("File created successfully:", data);
+  } catch (error) {
+    console.error("Error creating file:", error);
+  }
+}
+
+
+
 
 const handleDrop = (event: DragEvent) => {
   event.preventDefault();
@@ -12,6 +40,7 @@ const handleDrop = (event: DragEvent) => {
     console.log(dropfile);
     isfile.value = true;
     drop.value = dropfile.name;
+
   }
 };
 
@@ -26,6 +55,7 @@ const fileUpload = (event: Event) => {
   const file = uploadfile[0];
   isfile.value = true;
   drop.value = file.name;
+  sendformfile.file = file.name;
   console.log("Selected file:", file.name);
 };
 
