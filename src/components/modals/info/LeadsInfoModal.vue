@@ -30,6 +30,10 @@ const props = defineProps({
     type: Number,
     required: true,
   },
+  reloadData: {
+    type: Function,
+    required: true,
+  },
 });
 
 const isFull = ref<boolean>(false);
@@ -109,8 +113,8 @@ function changeWidth() {
           class="modal-aside pb-4 w-[420px] h-full overflow-y-auto border-r border-gray-300"
         >
           <!-- detail -->
-          <Details :data="props.data" />
-          <Person :data="props.data" />
+          <Details :data="props.data" :reload="props.reloadData" />
+          <Person :data="props.data" :reload="props.reloadData" />
 
           <!-- payment -->
           <!-- <AsideAccordion

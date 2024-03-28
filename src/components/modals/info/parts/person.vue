@@ -1,20 +1,71 @@
 <script setup lang="ts">
 import { ref, reactive } from "vue";
 import BaseAccardion from "../../../accordions/BaseAccardion.vue";
+import { useLeadStore } from "../../../../stores/user/lead.ts";
+import axios from "../../../../api/axios.ts";
 
+const leadStore = useLeadStore();
 const props = defineProps({
   data: {
     type: Object,
     required: true,
   },
+  reload: {
+    type: Function,
+    required: true,
+  },
 });
 const client = reactive({
+  id: 0,
   name: "",
   email: "",
   phone: "",
 });
 const open = ref<boolean>(true);
 const isOpenEdit = ref<boolean>(true);
+
+const openEditForm = () => {
+  isOpenEdit.value = false;
+  client.name = props.data?.customer?.name;
+  client.email = props.data?.customer?.email;
+  client.phone = props.data?.customer?.phone;
+};
+
+const customer_array = ref<any>([]);
+const getCustomer = async (e: any) => {
+  const res = await axios.get(
+    `/api/customers/?name=${e.target.value}&page=1&pageSize=10`
+  );
+  customer_array.value = res.data.data;
+  console.log(customer_array.value);
+};
+const selectCustomer = (item: any) => {
+  client.name = item?.name;
+  client.email = item?.email;
+  client.phone = item?.phone;
+  client.id = item?.id;
+  customer_array.value = [];
+};
+
+const updateLead = async () => {
+  await leadStore.updateLead(props.data?.guid, {
+    status: "leads",
+    price: 0,
+    reservationPrice: 200,
+    vehicleYear: +props.data?.vehicleYear,
+    condition: props.data?.condition,
+    trailerType: props.data?.trailerType,
+    notes: props.data?.notes,
+    dateEstShip: props.data?.dateEstShip,
+    vehicle: +props.data?.vehicle?.id,
+    source: +props.data?.source?.id,
+    origin: +props.data?.origin?.id,
+    destination: +props.data?.destionation?.id,
+    customer: +client.id,
+  });
+  await props.reload(props.data?.guid, props.data?.i);
+  isOpenEdit.value = true;
+};
 </script>
 
 <template>
@@ -33,6 +84,7 @@ const isOpenEdit = ref<boolean>(true);
       <div class="flex items-center">
         <div class="flex">
           <div
+            @click="openEditForm"
             class="bg-white w-5 h-5 mx-1 rounded border border-gray-300 flex items-center justify-center"
           >
             <i class="bx bx-pencil text-sm text-textBlack"></i>
@@ -63,7 +115,7 @@ const isOpenEdit = ref<boolean>(true);
           </p>
           <div class="flex opacity-0 group-hover:opacity-100 duration-200">
             <div
-              @click="isOpenEdit = !isOpenEdit"
+              @click="openEditForm"
               class="bg-white w-5 h-5 rounded border border-gray-200 flex items-center justify-center"
             >
               <i class="bx bx-pencil text-sm text-textBlack"></i>
@@ -152,6 +204,7 @@ const isOpenEdit = ref<boolean>(true);
             Cancel
           </button>
           <button
+            @click="updateLead"
             type="submit"
             class="px-1 text-sm min-w-[45px] rounded text-white bg-mainBlue font-medium mx-[6px]"
           >
@@ -170,13 +223,34 @@ const isOpenEdit = ref<boolean>(true);
             <label for="client_name" class="w-[35%] text-textBlack">
               Name<span class="text-red-500">*</span>
             </label>
-            <input
-              id="client_name"
-              v-model="client.name"
-              required
-              placeholder="empty"
-              class="w-[65%] py-[2px] px-2 rounded border border-gray-300 outline-none"
-            />
+            <div class="relative w-[65%]">
+              <input
+                id="client_name"
+                v-model="client.name"
+                required
+                placeholder="empty"
+                @input="getCustomer"
+                class="w-full py-[2px] px-2 rounded border border-gray-300 outline-none"
+              />
+              <ul
+                v-if="customer_array?.length > 0"
+                class="variant-emnu absolute left-0 top-[30px] z-50 w-full duration-200 bg-white rounded-md border border-gray-300"
+                :class="
+                  customer_array?.length > 0
+                    ? 'max-h-[145px] overflow-y-auto'
+                    : 'max-h-0'
+                "
+              >
+                <li
+                  v-for="(item, index) in customer_array"
+                  :key="index + 'TRRFFG'"
+                  class="px-2 py-1 text-sm hover:bg-gray-100 duration-100 cursor-pointer"
+                  @click="selectCustomer(item)"
+                >
+                  {{ item?.name }}
+                </li>
+              </ul>
+            </div>
           </div>
           <!-- 2 -->
           <div class="flex items-center mb-[10px]">
@@ -188,6 +262,7 @@ const isOpenEdit = ref<boolean>(true);
               v-model="client.email"
               required
               placeholder="empty"
+              disabled
               class="w-[65%] py-[2px] px-2 rounded border border-gray-300 outline-none"
             />
           </div>
@@ -201,6 +276,7 @@ const isOpenEdit = ref<boolean>(true);
               v-model="client.phone"
               required
               placeholder="empty"
+              disabled
               class="w-[65%] py-[2px] px-2 rounded border border-gray-300 outline-none"
             />
           </div>

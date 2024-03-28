@@ -6,6 +6,14 @@ const props = defineProps({
     type: String,
     required: true,
   },
+  editFunction: {
+    type: Function,
+    required: true,
+  },
+  openAll: {
+    type: Boolean,
+    reqired: true,
+  },
 });
 const isOpenEdit = ref<boolean>(false);
 const condition = ref<string>("");
@@ -27,7 +35,9 @@ const searchCondition = (e: any) => {
 };
 
 const selectCondition = (val: string) => {
-  condition.value = val;
+  if (props.title != val) {
+    props.editFunction({ condition: val });
+  }
   showCondition.value = true;
   input.value.value = "";
   allConditions.value = ["run", "rols", "forklift"];
@@ -38,6 +48,13 @@ const deleteOption = () => {
   condition.value = "";
   input.value.focus();
   showCondition.value = false;
+};
+
+const closeCondition = () => {
+  showCondition.value = true;
+  input.value.value = "";
+  allConditions.value = ["run", "rols", "forklift"];
+  isOpenEdit.value = false;
 };
 </script>
 
@@ -52,14 +69,14 @@ const deleteOption = () => {
     <div class="w-2/3 flex justify-between items-center">
       <!-- title -->
       <p
-        v-if="!isOpenEdit"
+        v-if="!isOpenEdit && !props.openAll"
         class="text-textBlack text-sm px-1 rounded bg-lightBlue"
       >
         {{ props.title }}
       </p>
       <!-- edit btn -->
       <div
-        v-if="!isOpenEdit"
+        v-if="!isOpenEdit && !props.openAll"
         class="flex opacity-0 group-hover:opacity-100 duration-200"
       >
         <div
@@ -76,10 +93,10 @@ const deleteOption = () => {
       </div>
       <!-- edit modal -->
       <div
-        v-if="isOpenEdit"
+        v-if="isOpenEdit || props.openAll"
         class="w-full rounded-md overflow-hidden border border-gray-300"
       >
-        <div class="flex gap-x-1 bg-gray-100 py-1 px-2">
+        <div class="flex gap-x-1 bg-gray-100 py-1 px-2 relative">
           <span
             v-if="showCondition"
             class="flex items-center rounded-md px-1 bg-lightBlue text-mainBlue"
@@ -90,10 +107,16 @@ const deleteOption = () => {
           <input
             ref="input"
             type="text"
-            class="bg-gray-100 outline-none"
+            class="bg-gray-100 outline-none grow"
             @input="searchCondition"
           />
-          <i class="bx bx-x text-textBlack text-lg"></i>
+          <div
+            v-if="!props.openAll"
+            @click="closeCondition"
+            class="absolute top-0 right-0 h-full flex items-center px-1 bg-gray-100"
+          >
+            <i class="bx bx-x text-textBlack text-xl"></i>
+          </div>
         </div>
         <div class="bg-white py-1">
           <ul>

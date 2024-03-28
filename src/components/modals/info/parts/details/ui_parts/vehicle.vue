@@ -12,6 +12,10 @@ const props = defineProps({
     type: Function,
     required: true,
   },
+  openAll: {
+    type: Boolean,
+    reqired: true,
+  },
 });
 const isOpenEdit = ref<boolean>(true);
 const vehicle = reactive({
@@ -44,13 +48,20 @@ const submidData = () => {
   props.editFunction({ vehicle: vehicleId.value });
   isOpenEdit.value = !isOpenEdit.value;
 };
+
+const openEditForm = () => {
+  isOpenEdit.value = false;
+  vehicle.model = props.data?.name;
+  vehicle.make = props.data?.mark?.name;
+  vehicleId.value = +props.data?.id;
+};
 </script>
 
 <template>
   <form @submit.prevent="submidData">
     <!-- active -->
     <div
-      v-if="isOpenEdit"
+      v-if="isOpenEdit && !props.openAll"
       class="py-1 px-2 flex gap-x-4 hover:bg-gray-100 cursor-pointer duration-200 group"
     >
       <div class="w-1/3 text-nowrap overflow-hidden">
@@ -64,7 +75,7 @@ const submidData = () => {
         <div class="flex opacity-0 group-hover:opacity-100 duration-200">
           <div
             type="button"
-            @click="isOpenEdit = !isOpenEdit"
+            @click="openEditForm"
             class="bg-white w-5 h-5 rounded border border-gray-200 flex items-center justify-center"
           >
             <i class="bx bx-pencil text-sm text-textBlack"></i>
@@ -94,6 +105,7 @@ const submidData = () => {
       </template>
       <template #btns>
         <button
+          v-if="!props.openAll"
           type="button"
           class="px-1 text-sm min-w-[45px] rounded text-textBlack bg-white border border-gray-300"
           @click="isOpenEdit = !isOpenEdit"
@@ -101,6 +113,7 @@ const submidData = () => {
           Cancel
         </button>
         <button
+          v-if="!props.openAll"
           type="submit"
           class="px-1 text-sm min-w-[45px] rounded text-white bg-mainBlue font-medium mx-[6px]"
         >

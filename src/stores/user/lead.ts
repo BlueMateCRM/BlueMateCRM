@@ -77,7 +77,7 @@ export const useLeadStore = defineStore("lead", {
     },
 
     // UPDATE Lead
-    async updateLead(id: number, data: Required<ILeads>) {
+    async updateLead(id: number, data: any) {
       try {
         this.leads.loading = true;
         const res = await axios.put(`/api/leads/${id}/update/`, data);

@@ -30,6 +30,12 @@ async function getDataByNum(index: number | object) {
   }
 }
 
+// get Info modal data
+async function getInfoData(guid: string, idnx: number) {
+  await leadStore.getLeadDetails(guid);
+  singleData.value = { ...leadStore.details.data, i: idnx };
+}
+
 // open create lead modal
 const openCreateModal = () => {
   openCreate.value?.openModal();
@@ -49,6 +55,7 @@ const openCreateModal = () => {
       :data="singleData"
       :next="getDataByNum"
       :length="leadStore.leads.data?.length"
+      :reloadData="getInfoData"
     />
 
     <!-- header -->
